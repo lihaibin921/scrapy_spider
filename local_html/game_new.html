@@ -1,0 +1,2795 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="gb2312">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+        <title>最新小游戏,最新网页游戏,最新单机小游戏,2016最新热门小游戏大全</title>
+        <meta name="DESCRIPTION" content="4399每天最快更新国内外好玩小游戏，包括最新双人小游戏，网页小游戏，最新单机小游戏，化妆小游戏，冒险小游戏，竞技小游戏等，10万款最新热门小游戏等你来玩！">
+        <meta name="keywords" content="最新小游戏,最新网页游戏,最新单机小游戏,2016最新小游戏大全">
+        <script language="javascript">
+            function check_mobile() {
+                var ua = navigator.userAgent;
+                ua = ua ? ua.toLowerCase().replace(/-/g, "") : "";
+                if (ua.match(/(Android)/i)) {
+                    location.href = "//h.4399.com/wap/new.htm";
+                }
+                if (ua.match(/(U;)/i)) {
+                    if (ua.match(/(Adr)/i)) {
+                        location.href = "//h.4399.com/wap/new.htm";
+                    }
+                }
+                //UC Browser
+                if (ua.match(/(iPhone|iPod|iPad)/i)) {
+                    location.href = "//h.4399.com/wap/new.htm";
+                }
+                if (ua.match(/(U;)/i)) {
+                    if (ua.match(/(iPh|iPd)/i)) {
+                        location.href = "//h.4399.com/wap/new.htm";
+                    }
+                }
+                //UC Browser
+            }
+            check_mobile();
+        </script>
+        <link href="/css/flash2017.css" rel="stylesheet" type="text/css"/>
+        <script>
+            var ndate = new Date();
+            document.write('<link rel="stylesheet" href="//ptlogin.3304399.net/resource/css/base.css?' + ndate.getFullYear() + (ndate.getMonth() + 1) + ndate.getDate() + (ndate.getHours() < 12 ? 1 : 2) + '" type="text/css"/>')
+        </script>
+        <link rel="stylesheet" href="/resource8/style.css" type="text/css"/>
+        <link rel="stylesheet" href="/css/s-head2.css" type="text/css"/>
+        <script language="javascript">
+            var smallscreencss = "";
+            var bigScreenDefine = 144000000;
+            var showLRlimit = 1130;
+            //显示右侧漂浮的最大像素
+            var winWidth = 0;
+            function getScreen() {
+                if (window.innerWidth) {
+                    winWidth = window.innerWidth;
+                } else if ((document.body) && (document.body.clientWidth)) {
+                    winWidth = document.body.clientWidth;
+                }
+                if (document.documentElement && document.documentElement.clientHeight && document.documentElement.clientWidth) {
+                    winWidth = document.documentElement.clientWidth;
+                }
+                return winWidth;
+            }
+            function createLink(cssURL, lnkid) {
+                var head = document.getElementsByTagName('head')[0];
+                linkTag = null;
+                linkTag = document.createElement('link');
+                linkTag.setAttribute('id', (lnkid || 'dynamic-style'));
+                linkTag.setAttribute('class', lnkid);
+                linkTag.setAttribute('rel', 'stylesheet');
+                linkTag.setAttribute('type', 'text/css');
+                linkTag.href = cssURL;
+                head.appendChild(linkTag);
+            }
+            if (getScreen() <= bigScreenDefine) {
+                createLink(smallscreencss, "minScreen");
+            }
+            var hasgetCNXH = 0;
+            var hasgetPlayed = 0;
+            var jsloadcomplate = 0;
+            var ccookie = document.cookie;
+            var index4399skin = 0;
+            if (ccookie) {
+                var reg = /index4399skin=\d/g;
+                var index4399skins = ccookie.match(reg);
+                if (index4399skins) {
+                    index4399skin = index4399skins[0].replace("index4399skin=", "").replace(";", "");
+                }
+            }
+            var _skin = [["0", "-", "/css/index3/color0.css", ""], ["1", "//imga4.5054399.com/upload_pic/2016/5/28/4399_10530372629.jpg", "/css/inner5/color2.css", "//imga1.5054399.com/upload_pic/2016/5/4/4399_15320984563.jpg"], ["2", "//imga3.5054399.com/upload_pic/2016/5/28/4399_10531272800.jpg", "/css/inner5/color3.css", "//imga2.5054399.com/upload_pic/2016/5/4/4399_15322381015.jpg"], ["3", "//imga5.5054399.com/upload_pic/2016/5/28/4399_10522666489.jpg", "/css/inner5/color4.css", "//imga5.5054399.com/upload_pic/2016/5/4/4399_15311402660.jpg"], ["4", "//imga1.5054399.com/upload_pic/2016/5/28/4399_10533094204.jpg", "/css/inner5/color5.css", "//imga3.5054399.com/upload_pic/2016/5/4/4399_15325140001.jpg"], ["5", "//imga5.5054399.com/upload_pic/2016/5/28/4399_10524899454.jpg", "/css/inner5/color2.css", "//imga.5054399.com/upload_pic/2016/5/4/4399_15320061813.jpg"], ["6", "//imga3.5054399.com/upload_pic/2016/5/28/4399_10524037699.jpg", "/css/inner5/color4.css", "//imga3.5054399.com/upload_pic/2016/5/4/4399_15314715413.jpg"], ["7", "//imga1.5054399.com/upload_pic/2023/8/1/16908622453159261860.jpg", "/css/inner5/color6.css", "//imga1.5054399.com/upload_pic/2023/8/1/16908622453159261860.jpg"]];
+            for (a in _skin) {
+                if (_skin[a][0] == index4399skin) {
+                    var cskincss = _skin[a][2];
+                    var cskinimg_small = _skin[a][1];
+                    var cskinimg_big = _skin[a][3];
+                }
+            }
+            document.write('<link id="skincss" href="' + cskincss + '" rel="stylesheet" type="text/css" />');
+            function tracking(e) {
+                e = e ? e : window.event;
+                var s = e.srcElement ? e.srcElement : e.target;
+                var a = s.tagName;
+                var u = s.href ? s.href : s.src;
+                var t = s.innerText ? s.innerText : s.textContent;
+                if (a == "B" || a == "STRONG") {
+                    a = "A";
+                    u = s.parentNode.href;
+                }
+                if (a == "IMG") {
+                    t = u;
+                    u = s.parentNode.href;
+                }
+                if (a == "A" || a == "IMG") {
+                    try {
+                        new Image().src = "//trace1.5054399.com/trace.js?addd=" + a + "&uddd=" + escape(u) + "&tddd=" + t;
+                    } catch (ex) {}
+                }
+                return true;
+            }
+            function tracead(f) {
+                try {
+                    new Image().src = "//adtrace.5054399.com/click.js?from=" + f;
+                } catch (ex) {}
+                return true;
+            }
+            function showPlayed(num) {
+                if (num == 1) {
+                    if (hasgetPlayed == 0) {
+                        if (jsloadcomplate == 1) {
+                            getPlayed();
+                        } else {
+                            if (num == 1) {
+                                document.getElementById("reading1").style.display = "block";
+                            } else {
+                                document.getElementById("reading1").style.display = "none";
+                            }
+                            window.setTimeout(function() {
+                                showPlayed(num);
+                            }, 500);
+                        }
+                    }
+                    document.getElementById("showplay1").style.display = "block";
+                    document.getElementById("showplay2").style.display = "block";
+                    document.getElementById("showplay1").className = 'played cur';
+                } else {
+                    document.getElementById("showplay1").style.display = "block";
+                    document.getElementById("showplay2").style.display = "none";
+                    document.getElementById("reading1").style.display = "none";
+                    document.getElementById("showplay1").className = 'played';
+                }
+            }
+            function showc(num) {
+                if (num == 1) {
+                    if (hasgetCNXH == 0) {
+                        if (jsloadcomplate == 1) {
+                            getCNXH();
+                        } else {
+                            if (num == 1) {
+                                document.getElementById("reading2").style.display = "block";
+                                document.getElementById("notj").style.display = "none";
+                            } else {
+                                document.getElementById("reading2").style.display = "none";
+                                document.getElementById("notj").style.display = "block";
+                            }
+                            window.setTimeout(function() {
+                                showc(num);
+                            }, 500);
+                        }
+                    }
+                    document.getElementById("showc1").style.display = "block";
+                    document.getElementById("showc2").style.display = "block";
+                    document.getElementById("showc1").className = 'like cur';
+                } else {
+                    document.getElementById("showc1").style.display = "block";
+                    document.getElementById("showc2").style.display = "none";
+                    document.getElementById("reading2").style.display = "none";
+                    document.getElementById("showc1").className = 'like';
+                }
+            }
+            function getTop(e) {
+                var offset = e.offsetTop;
+                if (e.offsetParent != null)
+                    offset += getTop(e.offsetParent);
+                return offset;
+            }
+            function GoToBestPosition(controls, offsets) {
+                var objBestPosition = document.getElementById(controls);
+                var intBestPosition = getTop(objBestPosition);
+                window.scrollTo(0, intBestPosition - offsets);
+            }
+        </script>
+        <script>
+            var ndate = new Date();
+            document.write('<script type="text/javascript" src="//ptlogin.3304399.net/resource/ucenter.js?' + ndate.getFullYear() + (ndate.getMonth() + 1) + ndate.getDate() + (ndate.getHours() < 12 ? 1 : 2) + '" charset="utf-8"/><\/script>')
+        </script>
+        <script language="javascript" src="/jss/click_trace.js"></script>
+        <base target="_blank"></base>
+    </head>
+    <body id="skinbody" onmousedown="tracking(event);">
+        <div class="skin-lk" id="defaultbglink"></div>
+        <div class="tbar-h">
+            <div class="tbar">
+                <div class="bre">
+                    <a href="/" class="fl">
+                        <img alt="小游戏" src="/images/fl2016/logo.png">
+                    </a>
+                    <div class="search">
+                        <form action="//so2.4399.com/search/search.php" method="get" onsubmit="return checksearch(this)">
+                            <div class="fl">
+                                <input id="smart_input" onclick="document.charset='gb2312';chkSosmart()" value="搜索小游戏" name="k" autocomplete="off" class="s-tex">
+                                <div id="smart_arrow" style="height: 24px; left: 648px; top: 4px;">
+                                    <div style="height: 24px;" class="hide"></div>
+                                </div>
+                            </div>
+                            <div class="fl">
+                                <input value="" class="s-btn" type="submit">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="right-content">
+                        <div class="login">
+                            <a id="login_tologin" target="_blank" style="display:none" href="//my.4399.com/account/login">登录</a>
+                            <a target="_blank" id="login_toregister" style="display:none" href="//my.4399.com/account/login">注册</a>
+                            <a onmouseout="showlogineddiv(0);return false;" onmouseover="showlogineddiv(1);return false;" id="logined" href="" class="personal" style="display:none"></a>
+                            <script type="text/javascript">
+                                var uid = UniLogin.getUid();
+                                var uname = UniLogin.getDisplayNameText();
+                                if (uid > 0) {
+                                    document.write('<a class="personal cf origned" href="//u.4399.com/user/info"><img class="hp" src="//a.img4399.com/' + uid + '/small"><em class="tex">' + uname + '</em></a>');
+                                }
+                            </script>
+                        </div>
+                        <div onmouseout="showlogineddiv(0);return false;" onmouseover="showlogineddiv(1);return false;" id="logined2" class="login-rear" style=" display:none"></div>
+                        <div onmouseout="showPlayed(0);return false;" onmouseover="showPlayed(1);return false;" href="" id="showplay1" class="played" style="display: block;">
+                            <i class="ico1"></i>
+                            我玩过的<i class="ico3"></i>
+                        </div>
+                        <em class="seg"></em>
+                        <div onmouseout="showPlayed(0);return false;" onmouseover="showPlayed(1);return false;" id="showplay2" class="p-hover" style=" display:none">
+                            <p id="showword" style="display: none;">暂时还没有游戏记录，试试下面的游戏吧</p>
+                            <p id="reading1" style="display: none;">数据读取中，请稍候...</p>
+                            <div id="tjgameplay"></div>
+                            <div class="top-pag">
+                                <div id="rel_pagplay"></div>
+                                <a class="for-btn" id="moredivplay" href="//my.4399.com/shoucang/?m=PlayLog">更多</a>
+                            </div>
+                        </div>
+                        <div onmouseout="showc(0);return false;" onmouseover="showc(1);return false;" id="showc1" class="like" style="display: block;">
+                            <i class="ico2"></i>
+                            猜你喜欢<i class="ico3"></i>
+                        </div>
+                        <em class="seg"></em>
+                        <div onmouseout="showc(0);return false;" onmouseover="showc(1);return false;" id="showc2" class="l-hover" style=" display:none">
+                            <p id="notj">根据您的游戏记录，为您推荐以下游戏</p>
+                            <p id="reading2" style="display: none;">数据读取中，请稍候...</p>
+                            <div id="tjgame"></div>
+                            <div class="top-pag">
+                                <div id="rel_pag"></div>
+                                <a class="for-btn" id="morediv" href="//my.4399.com/shoucang/?m=Recommend">更多</a>
+                            </div>
+                        </div>
+                        <a id="chskin" onclick="return false;" target="_self" href="" class="skin">
+                            <i class="ico4"></i>
+                            换肤
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bre">
+            <div class="nav m10">
+                <div class="fl">
+                    <a href="/">首页</a>
+                    <a href="/flash_fl/2_1.htm">动作</a>
+                    <a href="/flash_fl/3_1.htm">体育</a>
+                    <a href="/flash_fl/5_1.htm">益智</a>
+                    <a href="/flash_fl/4_1.htm">射击</a>
+                    <a href="/flash_fl/6_1.htm">冒险</a>
+                    <a href="/flash_fl/7_1.htm">棋牌</a>
+                    <a href="/flash_fl/8_1.htm">策略</a>
+                    <a href="/flash_fl/12_1.htm">休闲</a>
+                    <a href="/special/195.htm">女生</a>
+                    <a href="/flash_fl/16_1.htm">装扮</a>
+                    <a href="/flash_fl/13_1.htm">儿童</a>
+                    <a href="/special/90.htm">过关</a>
+                    <a href="/special/1.htm">双人</a>
+                    <a href="//www.4399dmw.com/donghua/">动画片</a>
+                    <a href="//www.3000.com/">闪艺互动</a>
+                    <a href="//www.4399.cn/">手机游戏</a>
+                </div>
+                <div class="outside">
+                    <a href="/special/19.htm">网页游戏</a>
+                    <a href="//my.4399.com/">游戏吧</a>
+                </div>
+            </div>
+        </div>
+        <div class="crumbs">
+            <a class="fr btn" href="//a.4399.cn/">玩最新手游</a>
+            <em class="ico"></em>
+            <a href="/">4399小游戏</a>
+            &gt;最新小游戏
+        </div>
+        <div class="fun-box f-nb m15">
+            <span class="tit">精品游戏</span>
+        </div>
+        <div class="bre oh">
+            <ul class="b-game cf">
+                <li>
+                    <a href="/flash/210650.htm">
+                        <img src="//imga3.5054399.com/upload_pic/2021/9/2/4399_11231385833.jpg" alt="造梦无双">造梦无双
+                    </a>
+                </li>
+                <li>
+                    <a href="/flash/236933.htm">
+                        <img src="//imga5.5054399.com/upload_pic/2023/10/23/4399_11140132850.jpg" alt="太空人大乱斗">太空人大乱斗
+                    </a>
+                </li>
+                <li>
+                    <a href="/flash/236785.htm">
+                        <img src="//imga2.5054399.com/upload_pic/2023/10/23/4399_11141605270.jpg" alt="热血街头格斗">热血街头格斗
+                    </a>
+                </li>
+                <li>
+                    <a href="/flash/236669.htm">
+                        <img src="//imga5.5054399.com/upload_pic/2023/10/7/4399_15251125173.jpg" alt="英灵骑士">英灵骑士
+                    </a>
+                </li>
+                <li>
+                    <a href="/flash/236444.htm">
+                        <img src="//imga.5054399.com/upload_pic/2023/10/7/4399_15243173955.jpg" alt="全民吃鸡大作战">全民吃鸡大作战
+                    </a>
+                </li>
+                <li>
+                    <a href="/flash/236325.htm">
+                        <img src="//imga4.5054399.com/upload_pic/2023/10/7/4399_15240491520.jpg" alt="点灯2叩门怨">点灯2叩门怨
+                    </a>
+                </li>
+                <li>
+                    <a href="/flash/236482.htm">
+                        <img src="//imga3.5054399.com/upload_pic/2023/10/7/4399_15242088546.jpg" alt="狗狗模拟器">狗狗模拟器
+                    </a>
+                </li>
+                <li>
+                    <a href="/flash/236363.htm">
+                        <img src="//imga1.5054399.com/upload_pic/2023/10/7/4399_15244860981.jpg" alt="我养你阿">我养你阿
+                    </a>
+                </li>
+                <li>
+                    <a href="/flash/236471.htm">
+                        <img src="//imga5.5054399.com/upload_pic/2023/10/7/4399_15250022523.jpg" alt="新极限漂移赛车">新极限漂移赛车
+                    </a>
+                </li>
+                <li>
+                    <a href="/flash/236355.htm">
+                        <img src="//imga4.5054399.com/upload_pic/2023/10/7/4399_15235250225.jpg" alt="地下城大冒险">地下城大冒险
+                    </a>
+                </li>
+                <li>
+                    <a href="/flash/236127.htm">
+                        <img src="//imga3.5054399.com/upload_pic/2023/9/25/4399_13585392710.jpg" alt="动物吃鸡枪战">动物吃鸡枪战
+                    </a>
+                </li>
+                <li>
+                    <a href="/flash/235831.htm">
+                        <img src="//imga2.5054399.com/upload_pic/2023/9/11/4399_09255181670.jpg" alt="末日村庄">末日村庄
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="fun-box m15">
+            <span class="tit">最新小游戏</span>
+            <a class="trg" href="/flash/game100.htm">最新推荐游戏></a>
+        </div>
+        <div class="bre oh">
+            <ul class="n-game cf">
+                <li>
+                    <a href="/flash/236540.htm">
+                        <img alt="可爱动物绳索挑战" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/9/16/4399_14075373195.jpg">
+                        <b>可爱动物绳索挑战</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-30</em>
+                </li>
+                <li>
+                    <a href="/flash/236434.htm">
+                        <img alt="超能袋子男孩" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/9/12/4399_14361973440.jpg">
+                        <b>超能袋子男孩</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-30</em>
+                </li>
+                <li>
+                    <a href="/flash/237286.htm">
+                        <img alt="收集披萨馅" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/28/4399_15281962769.jpg">
+                        <b>收集披萨馅</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-29</em>
+                </li>
+                <li>
+                    <a href="/flash/237285.htm">
+                        <img alt="原始人逃出城堡" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/28/4399_15122271430.jpg">
+                        <b>原始人逃出城堡</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-29</em>
+                </li>
+                <li>
+                    <a href="/flash/237284.htm">
+                        <img alt="四张图猜单词" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/28/4399_15014710313.jpg">
+                        <b>四张图猜单词</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-29</em>
+                </li>
+                <li>
+                    <a href="/flash/237283.htm">
+                        <img alt="闪耀的宫殿逃脱" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/28/4399_15030120777.jpg">
+                        <b>闪耀的宫殿逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-29</em>
+                </li>
+                <li>
+                    <a href="/flash/237282.htm">
+                        <img alt="两点相连" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/28/4399_14433351201.jpg">
+                        <b>两点相连</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-29</em>
+                </li>
+                <li>
+                    <a href="/flash/237281.htm">
+                        <img alt="神秘古代废墟逃脱" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/28/4399_14093719593.jpg">
+                        <b>神秘古代废墟逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-29</em>
+                </li>
+                <li>
+                    <a href="/flash/237280.htm">
+                        <img alt="钻石俄罗斯方块" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/28/4399_11393687461.jpg">
+                        <b>钻石俄罗斯方块</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-29</em>
+                </li>
+                <li>
+                    <a href="/flash/237279.htm">
+                        <img alt="可爱公主大逃脱" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/28/4399_11073246015.jpg">
+                        <b>可爱公主大逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-29</em>
+                </li>
+                <li>
+                    <a href="/flash/237278.htm">
+                        <img alt="太空攻击" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/28/4399_10560775019.jpg">
+                        <b>太空攻击</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/4_1.htm">射击类</a>
+                    </em>
+                    <em>2023-10-29</em>
+                </li>
+                <li>
+                    <a href="/flash/237277.htm">
+                        <img alt="营救灌木兔" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/27/4399_17162608603.jpg">
+                        <b>营救灌木兔</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-28</em>
+                </li>
+                <li>
+                    <a href="/flash/237276.htm">
+                        <img alt="迷宫地牢逃脱" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/27/4399_17044923614.jpg">
+                        <b>迷宫地牢逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-28</em>
+                </li>
+                <li>
+                    <a href="/flash/237272.htm">
+                        <img alt="剑客之路" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/27/4399_15442429902.jpg">
+                        <b>剑客之路</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-28</em>
+                </li>
+                <li>
+                    <a href="/flash/237270.htm">
+                        <img alt="救援金刚鹦鹉夫妇" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/27/4399_15291201392.jpg">
+                        <b>救援金刚鹦鹉夫妇</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-28</em>
+                </li>
+                <li>
+                    <a href="/flash/237269.htm">
+                        <img alt="经营大排档H5" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/27/4399_15180833153.jpg">
+                        <b>经营大排档H5</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/12_1.htm">休闲类</a>
+                    </em>
+                    <em>2023-10-28</em>
+                </li>
+                <li>
+                    <a href="/flash/237268.htm">
+                        <img alt="逃离大型洞穴" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/27/4399_15134449329.jpg">
+                        <b>逃离大型洞穴</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-28</em>
+                </li>
+                <li>
+                    <a href="/flash/237267.htm">
+                        <img alt="小黑花花闯城堡H5" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/27/4399_15085918201.jpg">
+                        <b>小黑花花闯城堡H5</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/6_1.htm">冒险类</a>
+                    </em>
+                    <em>2023-10-28</em>
+                </li>
+                <li>
+                    <a href="/flash/237266.htm">
+                        <img alt="救援恐鸟" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/27/4399_14515265778.jpg">
+                        <b>救援恐鸟</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-28</em>
+                </li>
+                <li>
+                    <a href="/flash/237265.htm">
+                        <img alt="寻找狮子王冠" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/27/4399_14435593905.jpg">
+                        <b>寻找狮子王冠</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-28</em>
+                </li>
+                <li>
+                    <a href="/flash/237264.htm">
+                        <img alt="德鲁伊森林" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/27/4399_14405881737.jpg">
+                        <b>德鲁伊森林</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-28</em>
+                </li>
+                <li>
+                    <a href="/flash/237112.htm">
+                        <img alt="跑酷小子游万圣节" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/19/4399_17251866254.jpg">
+                        <b>跑酷小子游万圣节</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-28</em>
+                </li>
+                <li>
+                    <a href="/flash/237262.htm">
+                        <img alt="蝴蝶家族逃脱" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/27/4399_14332566347.jpg">
+                        <b>蝴蝶家族逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237261.htm">
+                        <img alt="领居丢失的物品" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/27/4399_14301517779.jpg">
+                        <b>领居丢失的物品</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237260.htm">
+                        <img alt="遗失的餐具" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/27/4399_14241070886.jpg">
+                        <b>遗失的餐具</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237259.htm">
+                        <img alt="万圣装扮" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/27/4399_14204169014.jpg">
+                        <b>万圣装扮</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/16_1.htm">装扮类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237258.htm">
+                        <img alt="我是侦探高手" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/27/4399_13594560062.jpg">
+                        <b>我是侦探高手</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237257.htm">
+                        <img alt="寻找企鹅玩偶" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/27/4399_10350198725.jpg">
+                        <b>寻找企鹅玩偶</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237256.htm">
+                        <img alt="雪豹大逃脱" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/26/4399_17343855826.jpg">
+                        <b>雪豹大逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237255.htm">
+                        <img alt="松鼠逃离农场" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/26/4399_17272740807.jpg">
+                        <b>松鼠逃离农场</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237254.htm">
+                        <img alt="拯救笼中姑娘" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/26/4399_17123376396.jpg">
+                        <b>拯救笼中姑娘</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237253.htm">
+                        <img alt="宇宙时钟陆地逃脱" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/26/4399_17005400547.jpg">
+                        <b>宇宙时钟陆地逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237252.htm">
+                        <img alt="的士师傅" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/26/4399_16563273105.jpg">
+                        <b>的士师傅</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237251.htm">
+                        <img alt="背包大侠" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/26/4399_16402928338.jpg">
+                        <b>背包大侠</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237250.htm">
+                        <img alt="攀岩大赛" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/26/4399_15541528841.jpg">
+                        <b>攀岩大赛</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237249.htm">
+                        <img alt="寻找遗失的手机" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/26/4399_15072604761.jpg">
+                        <b>寻找遗失的手机</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237248.htm">
+                        <img alt="韦氏鸫莺逃脱" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/26/4399_14532548059.jpg">
+                        <b>韦氏鸫莺逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237247.htm">
+                        <img alt="智慧拼箱子" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/26/4399_14532150547.jpg">
+                        <b>智慧拼箱子</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237246.htm">
+                        <img alt="寻找歌手萨姆" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/26/4399_14394084880.jpg">
+                        <b>寻找歌手萨姆</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237245.htm">
+                        <img alt="逃离奇幻景观" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/26/4399_14364864594.jpg">
+                        <b>逃离奇幻景观</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237244.htm">
+                        <img alt="旅途英雄" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/26/4399_14295051931.jpg">
+                        <b>旅途英雄</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/8_1.htm">策略类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237242.htm">
+                        <img alt="寻找下水道盖板" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/26/4399_14232867099.jpg">
+                        <b>寻找下水道盖板</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237241.htm">
+                        <img alt="丢失在公园的钱包" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/26/4399_14191115790.jpg">
+                        <b>丢失在公园的钱包</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-27</em>
+                </li>
+                <li>
+                    <a href="/flash/237233.htm">
+                        <img alt="三国很忙" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/25/4399_17533980538.jpg">
+                        <b>三国很忙</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/8_1.htm">策略类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237231.htm">
+                        <img alt="寻找盛装的男孩" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/25/4399_17162834233.jpg">
+                        <b>寻找盛装的男孩</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237230.htm">
+                        <img alt="指尖投篮" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/25/4399_17091814331.jpg">
+                        <b>指尖投篮</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237229.htm">
+                        <img alt="地下隧道大逃脱" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/25/4399_17041715467.jpg">
+                        <b>地下隧道大逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237225.htm">
+                        <img alt="南瓜噩梦" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/25/4399_16335445269.jpg">
+                        <b>南瓜噩梦</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237222.htm">
+                        <img alt="救援埃莉诺" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/25/4399_16285946329.jpg">
+                        <b>救援埃莉诺</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237221.htm">
+                        <img alt="甲板清洁工" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/25/4399_16042955278.jpg">
+                        <b>甲板清洁工</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237219.htm">
+                        <img alt="方块世界大爆破3" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/25/4399_15013901006.jpg">
+                        <b>方块世界大爆破3</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237218.htm">
+                        <img alt="营救皇家动物" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/25/4399_14594680877.jpg">
+                        <b>营救皇家动物</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237217.htm">
+                        <img alt="小恐龙逃离" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/25/4399_14385888324.jpg">
+                        <b>小恐龙逃离</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237216.htm">
+                        <img alt="救援工作人员" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/25/4399_14460056132.jpg">
+                        <b>救援工作人员</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237215.htm">
+                        <img alt="方块球球" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/25/4399_14355591164.jpg">
+                        <b>方块球球</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237214.htm">
+                        <img alt="拼接英语单词" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/25/4399_14234755739.jpg">
+                        <b>拼接英语单词</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237213.htm">
+                        <img alt="逃离工地" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/25/4399_14253893465.jpg">
+                        <b>逃离工地</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237212.htm">
+                        <img alt="新生的奥秘" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/25/4399_14101349764.jpg">
+                        <b>新生的奥秘</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237211.htm">
+                        <img alt="救助受困的鱼" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/25/4399_11471458905.jpg">
+                        <b>救助受困的鱼</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/4_1.htm">射击类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237240.htm">
+                        <img alt="摆动蜘蛛过障碍" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/26/4399_11465793707.jpg">
+                        <b>摆动蜘蛛过障碍</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237239.htm">
+                        <img alt="水疗中心的服务" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/26/4399_11273049664.jpg">
+                        <b>水疗中心的服务</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237238.htm">
+                        <img alt="露西四季时尚达人" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/26/4399_11132265327.jpg">
+                        <b>露西四季时尚达人</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/16_1.htm">装扮类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237237.htm">
+                        <img alt="下水道逃脱" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/26/4399_11245611792.jpg">
+                        <b>下水道逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237236.htm">
+                        <img alt="从前时光" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/26/4399_11030941202.jpg">
+                        <b>从前时光</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237235.htm">
+                        <img alt="幽灵酒馆" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/26/4399_10593668645.jpg">
+                        <b>幽灵酒馆</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/237234.htm">
+                        <img alt="美丽蝴蝶大逃脱" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/26/4399_09355950524.jpg">
+                        <b>美丽蝴蝶大逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-26</em>
+                </li>
+                <li>
+                    <a href="/flash/218868.htm">
+                        <img alt="NBA英雄" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/25/4399_09274128769.jpg">
+                        <b>NBA英雄</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/3_1.htm">体育类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237210.htm">
+                        <img alt="救援小海豚" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/25/4399_11441278956.jpg">
+                        <b>救援小海豚</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237209.htm">
+                        <img alt="盒子的秘密" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/25/4399_15190300433.jpg">
+                        <b>盒子的秘密</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237208.htm">
+                        <img alt="拯救笼中白母鸡" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/25/4399_11200402098.jpg">
+                        <b>拯救笼中白母鸡</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237207.htm">
+                        <img alt="天空探险队" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/25/4399_11180932748.jpg">
+                        <b>天空探险队</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237206.htm">
+                        <img alt="可爱小马逃脱" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/25/4399_11094585802.jpg">
+                        <b>可爱小马逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/236396.htm">
+                        <img alt="圆球华容道" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/9/8/4399_17031044041.jpg">
+                        <b>圆球华容道</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237202.htm">
+                        <img alt="逃离景区河流" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/24/4399_17041967991.jpg">
+                        <b>逃离景区河流</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/236391.htm">
+                        <img alt="火柴人出逃记" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/9/8/4399_16082804681.jpg">
+                        <b>火柴人出逃记</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237201.htm">
+                        <img alt="给客人做饭H5" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/24/4399_16412863915.jpg">
+                        <b>给客人做饭H5</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/12_1.htm">休闲类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237200.htm">
+                        <img alt="拯救笼中小猪" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/24/4399_16400190067.jpg">
+                        <b>拯救笼中小猪</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237199.htm">
+                        <img alt="红方块闯迷宫" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/24/4399_16274439102.jpg">
+                        <b>红方块闯迷宫</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237197.htm">
+                        <img alt="保护我的南瓜" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/24/4399_15594431248.jpg">
+                        <b>保护我的南瓜</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237196.htm">
+                        <img alt="救援名人夫妇" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/24/4399_16143727752.jpg">
+                        <b>救援名人夫妇</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237195.htm">
+                        <img alt="小黑花花射飞镖H5" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/24/4399_16040540199.jpg">
+                        <b>小黑花花射飞镖H5</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237194.htm">
+                        <img alt="拯救狞猫" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/24/4399_15440358763.jpg">
+                        <b>拯救狞猫</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237193.htm">
+                        <img alt="寻找心理医生" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/24/4399_15335161779.jpg">
+                        <b>寻找心理医生</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237192.htm">
+                        <img alt="寻找汽车钥匙" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/24/4399_15572281343.jpg">
+                        <b>寻找汽车钥匙</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237191.htm">
+                        <img alt="绵羊过障碍" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/24/4399_14583445667.jpg">
+                        <b>绵羊过障碍</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237190.htm">
+                        <img alt="逗小猴开心系列812" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/24/4399_14563335458.jpg">
+                        <b>逗小猴开心系列812</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237188.htm">
+                        <img alt="音乐笔记" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/24/4399_14301624906.jpg">
+                        <b>音乐笔记</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-25</em>
+                </li>
+                <li>
+                    <a href="/flash/237134.htm">
+                        <img alt="深渊契约" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/20/4399_16263007772.jpg">
+                        <b>深渊契约</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/6_1.htm">冒险类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237187.htm">
+                        <img alt="海岛小分队" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/24/4399_14242061959.jpg">
+                        <b>海岛小分队</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/12_1.htm">休闲类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237186.htm">
+                        <img alt="村庄洞穴逃脱" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/24/4399_14052587755.jpg">
+                        <b>村庄洞穴逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237185.htm">
+                        <img alt="逃离简易房屋129" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/24/4399_13475661598.jpg">
+                        <b>逃离简易房屋129</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237184.htm">
+                        <img alt="夏季露营探险" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/24/4399_11420906633.jpg">
+                        <b>夏季露营探险</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/12_1.htm">休闲类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237183.htm">
+                        <img alt="救援草裙姑娘" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/24/4399_11512803129.jpg">
+                        <b>救援草裙姑娘</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237182.htm">
+                        <img alt="神秘空间站" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/24/4399_11315655965.jpg">
+                        <b>神秘空间站</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237181.htm">
+                        <img alt="前期准备工作" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/24/4399_11244799865.jpg">
+                        <b>前期准备工作</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237180.htm">
+                        <img alt="鸟群贪吃蛇" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/24/4399_10145325838.jpg">
+                        <b>鸟群贪吃蛇</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237177.htm">
+                        <img alt="花朵壁画屋逃脱" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/23/4399_16462912128.jpg">
+                        <b>花朵壁画屋逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237176.htm">
+                        <img alt="信徒" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/23/4399_16324830188.jpg">
+                        <b>信徒</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/8_1.htm">策略类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237175.htm">
+                        <img alt="逃离沙漠地区" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/23/4399_16260627438.jpg">
+                        <b>逃离沙漠地区</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237174.htm">
+                        <img alt="玫瑰仙境逃脱" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/23/4399_16091420028.jpg">
+                        <b>玫瑰仙境逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237173.htm">
+                        <img alt="逃离薄雾森林" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/23/4399_16130737100.jpg">
+                        <b>逃离薄雾森林</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237172.htm">
+                        <img alt="双人激战3D" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/23/4399_15582062010.jpg">
+                        <b>双人激战3D</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/4_1.htm">射击类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237171.htm">
+                        <img alt="救出小马" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/23/4399_16041926695.jpg">
+                        <b>救出小马</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237170.htm">
+                        <img alt="公路赛车挑战" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/23/4399_15504556450.jpg">
+                        <b>公路赛车挑战</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237169.htm">
+                        <img alt="宇宙猫生存" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/23/4399_15450238190.jpg">
+                        <b>宇宙猫生存</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/4_1.htm">射击类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237168.htm">
+                        <img alt="逃离魔法锅屋" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/23/4399_15360677431.jpg">
+                        <b>逃离魔法锅屋</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237167.htm">
+                        <img alt="拯救孔雀龙" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/23/4399_15245312776.jpg">
+                        <b>拯救孔雀龙</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-24</em>
+                </li>
+                <li>
+                    <a href="/flash/237166.htm">
+                        <img alt="红腹灰雀逃脱" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/23/4399_15140667605.jpg">
+                        <b>红腹灰雀逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237165.htm">
+                        <img alt="火柴人升阶战" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/23/4399_14540234338.jpg">
+                        <b>火柴人升阶战</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237164.htm">
+                        <img alt="狂野大冒险" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/23/4399_14544168780.jpg">
+                        <b>狂野大冒险</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237163.htm">
+                        <img alt="寻找结婚礼服" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/23/4399_14370934617.jpg">
+                        <b>寻找结婚礼服</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237162.htm">
+                        <img alt="一笔画出来" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/23/4399_14284534898.jpg">
+                        <b>一笔画出来</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237161.htm">
+                        <img alt="救援暹罗猫" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/23/4399_14320669548.jpg">
+                        <b>救援暹罗猫</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237160.htm">
+                        <img alt="奇妙的化妆术" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/23/4399_14034286585.jpg">
+                        <b>奇妙的化妆术</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/16_1.htm">装扮类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237159.htm">
+                        <img alt="逗小猴开心系列811" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/23/4399_13583581714.jpg">
+                        <b>逗小猴开心系列811</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237158.htm">
+                        <img alt="纸杯蛋糕的线索" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/23/4399_11460293298.jpg">
+                        <b>纸杯蛋糕的线索</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237157.htm">
+                        <img alt="目的地之谜" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/23/4399_11184722248.jpg">
+                        <b>目的地之谜</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237156.htm">
+                        <img alt="找到海港走私者" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/23/4399_11141008624.jpg">
+                        <b>找到海港走私者</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237155.htm">
+                        <img alt="暴打小僵尸" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/23/4399_10593652371.jpg">
+                        <b>暴打小僵尸</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/4_1.htm">射击类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237153.htm">
+                        <img alt="山鹿逃出山谷" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/23/4399_10081952981.jpg">
+                        <b>山鹿逃出山谷</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/235940.htm">
+                        <img alt="维京人逃生记2" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/8/15/4399_17411220286.jpg">
+                        <b>维京人逃生记2</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/6_1.htm">冒险类</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/236246.htm">
+                        <img alt="隧道冲击" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/8/30/4399_17334640256.jpg">
+                        <b>隧道冲击</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-23</em>
+                </li>
+                <li>
+                    <a href="/flash/237145.htm">
+                        <img alt="昏暗儿童房逃生130" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/20/4399_18084057909.jpg">
+                        <b>昏暗儿童房逃生130</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237144.htm">
+                        <img alt="沉没的宝藏2" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/20/4399_18035827904.jpg">
+                        <b>沉没的宝藏2</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237143.htm">
+                        <img alt="古墓诡影" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/20/4399_17272731773.jpg">
+                        <b>古墓诡影</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237142.htm">
+                        <img alt="迷路的猫" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/20/4399_17204251764.jpg">
+                        <b>迷路的猫</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237141.htm">
+                        <img alt="管道冒险" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/20/4399_17162538604.jpg">
+                        <b>管道冒险</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/6_1.htm">冒险类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237140.htm">
+                        <img alt="色彩小球转换" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/20/4399_17104803637.jpg">
+                        <b>色彩小球转换</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237139.htm">
+                        <img alt="荒野狩猎" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/20/4399_17031679849.jpg">
+                        <b>荒野狩猎</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/4_1.htm">射击类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237138.htm">
+                        <img alt="绵羊家族逃脱" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/20/4399_16580241877.jpg">
+                        <b>绵羊家族逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237137.htm">
+                        <img alt="寻找纸袋玩具" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/20/4399_16400483871.jpg">
+                        <b>寻找纸袋玩具</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237136.htm">
+                        <img alt="新坦克对战" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/20/4399_16341266163.jpg">
+                        <b>新坦克对战</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/8_1.htm">策略类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237135.htm">
+                        <img alt="逃离破落村落" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/20/4399_16311257984.jpg">
+                        <b>逃离破落村落</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237152.htm">
+                        <img alt="修车店的秘密" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/21/4399_15064388094.jpg">
+                        <b>修车店的秘密</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237151.htm">
+                        <img alt="寻找丢失的黄金" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/21/4399_14515647826.jpg">
+                        <b>寻找丢失的黄金</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237150.htm">
+                        <img alt="油条冰淇淋" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/21/4399_14242640050.jpg">
+                        <b>油条冰淇淋</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/12_1.htm">休闲类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237149.htm">
+                        <img alt="建造天柱" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/21/4399_11473555002.jpg">
+                        <b>建造天柱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237148.htm">
+                        <img alt="寻找铅笔男孩" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/21/4399_11265689792.jpg">
+                        <b>寻找铅笔男孩</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237147.htm">
+                        <img alt="上帝的祝福" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/21/4399_11093127540.jpg">
+                        <b>上帝的祝福</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237146.htm">
+                        <img alt="红色蘑菇林逃脱" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/21/4399_10544240256.jpg">
+                        <b>红色蘑菇林逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-22</em>
+                </li>
+                <li>
+                    <a href="/flash/237133.htm">
+                        <img alt="魔法大厨" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/20/4399_16182576833.jpg">
+                        <b>魔法大厨</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/12_1.htm">休闲类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237132.htm">
+                        <img alt="推动选取器" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/20/4399_16093119158.jpg">
+                        <b>推动选取器</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237131.htm">
+                        <img alt="疯狂克隆人" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/20/4399_15502906711.jpg">
+                        <b>疯狂克隆人</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/6_1.htm">冒险类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237130.htm">
+                        <img alt="爱吃苹果的男孩" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/20/4399_15495065825.jpg">
+                        <b>爱吃苹果的男孩</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237129.htm">
+                        <img alt="救援气球女孩" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/20/4399_15480295060.jpg">
+                        <b>救援气球女孩</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237128.htm">
+                        <img alt="机器人翻翻看" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/20/4399_15302644418.jpg">
+                        <b>机器人翻翻看</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237127.htm">
+                        <img alt="救援美人鱼模仿者" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/20/4399_15131742932.jpg">
+                        <b>救援美人鱼模仿者</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237126.htm">
+                        <img alt="汉字消方块" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/20/4399_14541486355.jpg">
+                        <b>汉字消方块</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237125.htm">
+                        <img alt="混乱的化学家" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/20/4399_14511626602.jpg">
+                        <b>混乱的化学家</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237124.htm">
+                        <img alt="暗黑系公主婚礼" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/20/4399_14464654256.jpg">
+                        <b>暗黑系公主婚礼</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/16_1.htm">装扮类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237123.htm">
+                        <img alt="逃离荒废的营地" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/20/4399_14463686235.jpg">
+                        <b>逃离荒废的营地</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237122.htm">
+                        <img alt="小猪消消" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/20/4399_14315785956.jpg">
+                        <b>小猪消消</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237121.htm">
+                        <img alt="老城区酒吧" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/20/4399_11541342524.jpg">
+                        <b>老城区酒吧</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237120.htm">
+                        <img alt="封印魔法之门" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/20/4399_11502539896.jpg">
+                        <b>封印魔法之门</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237119.htm">
+                        <img alt="寻找美容师" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/20/4399_11325223912.jpg">
+                        <b>寻找美容师</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237118.htm">
+                        <img alt="挪了个车" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/20/4399_11284848856.jpg">
+                        <b>挪了个车</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237117.htm">
+                        <img alt="儿童洗衣房" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/20/4399_11065036865.jpg">
+                        <b>儿童洗衣房</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/16_1.htm">装扮类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237116.htm">
+                        <img alt="昏暗儿童房逃生134" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/20/4399_10425847564.jpg">
+                        <b>昏暗儿童房逃生134</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237114.htm">
+                        <img alt="双人PK挑战" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/20/4399_10290940153.jpg">
+                        <b>双人PK挑战</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/12_1.htm">休闲类</a>
+                    </em>
+                    <em>2023-10-21</em>
+                </li>
+                <li>
+                    <a href="/flash/237111.htm">
+                        <img alt="小飞象逃脱" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/19/4399_17213944503.jpg">
+                        <b>小飞象逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237110.htm">
+                        <img alt="寻找滑冰男孩" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/19/4399_17141499131.jpg">
+                        <b>寻找滑冰男孩</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237109.htm">
+                        <img alt="首席医生救援" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/19/4399_17045156785.jpg">
+                        <b>首席医生救援</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237108.htm">
+                        <img alt="乌鸦森林大逃脱" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/19/4399_16561544049.jpg">
+                        <b>乌鸦森林大逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237107.htm">
+                        <img alt="制作甜披萨的楠楠" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/19/4399_16384804031.jpg">
+                        <b>制作甜披萨的楠楠</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/16_1.htm">装扮类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237036.htm">
+                        <img alt="梦想海岛王" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/17/4399_15150351358.jpg">
+                        <b>梦想海岛王</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/12_1.htm">休闲类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237106.htm">
+                        <img alt="剑镇三界" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/19/4399_16380973366.jpg">
+                        <b>剑镇三界</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/6_1.htm">冒险类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237105.htm">
+                        <img alt="布置我的别墅" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/19/4399_16293060537.jpg">
+                        <b>布置我的别墅</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/12_1.htm">休闲类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237104.htm">
+                        <img alt="西瓜拼接" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/19/4399_16045139560.jpg">
+                        <b>西瓜拼接</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237102.htm">
+                        <img alt="救援金色鸭子" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/19/4399_16005414068.jpg">
+                        <b>救援金色鸭子</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237101.htm">
+                        <img alt="蘑菇兄弟" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/19/4399_15492645179.jpg">
+                        <b>蘑菇兄弟</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/6_1.htm">冒险类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237100.htm">
+                        <img alt="救援华丽的小姑娘" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/19/4399_15401593054.jpg">
+                        <b>救援华丽的小姑娘</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237099.htm">
+                        <img alt="热带麻将" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/19/4399_15095716112.jpg">
+                        <b>热带麻将</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237097.htm">
+                        <img alt="烧脑大挑战合集" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/19/4399_14063740664.jpg">
+                        <b>烧脑大挑战合集</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237095.htm">
+                        <img alt="营救男子" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/19/4399_11343388035.jpg">
+                        <b>营救男子</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237094.htm">
+                        <img alt="田野之间" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/19/4399_11261632052.jpg">
+                        <b>田野之间</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237093.htm">
+                        <img alt="闪亮少女换装" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/19/4399_11223105296.jpg">
+                        <b>闪亮少女换装</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/16_1.htm">装扮类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237092.htm">
+                        <img alt="救援时尚的蜘蛛侠" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/19/4399_11234026509.jpg">
+                        <b>救援时尚的蜘蛛侠</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237091.htm">
+                        <img alt="被诅咒的电影院" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/19/4399_11033102242.jpg">
+                        <b>被诅咒的电影院</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237090.htm">
+                        <img alt="阳光大花园" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/19/4399_10442248278.jpg">
+                        <b>阳光大花园</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237088.htm">
+                        <img alt="老六别坑了" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/19/4399_09404975383.jpg">
+                        <b>老六别坑了</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237087.htm">
+                        <img alt="黑暗的窄屋逃脱" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/19/4399_09462465143.jpg">
+                        <b>黑暗的窄屋逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237086.htm">
+                        <img alt="逃离简易房屋127" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/19/4399_09345066590.jpg">
+                        <b>逃离简易房屋127</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/229945.htm">
+                        <img alt="僵尸兄弟闯密室3" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2022/9/26/4399_16551970013.jpg">
+                        <b>僵尸兄弟闯密室3</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-20</em>
+                </li>
+                <li>
+                    <a href="/flash/237085.htm">
+                        <img alt="寻找茄子玩具" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/18/4399_17515681182.jpg">
+                        <b>寻找茄子玩具</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237084.htm">
+                        <img alt="昏暗儿童房逃生129" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/18/4399_17410508687.jpg">
+                        <b>昏暗儿童房逃生129</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237081.htm">
+                        <img alt="逃离森林的爱情鸟" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/18/4399_16503962138.jpg">
+                        <b>逃离森林的爱情鸟</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237080.htm">
+                        <img alt="寻找公主雕像" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/18/4399_16302616568.jpg">
+                        <b>寻找公主雕像</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237079.htm">
+                        <img alt="英勇营救姑娘" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/18/4399_16202445593.jpg">
+                        <b>英勇营救姑娘</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237078.htm">
+                        <img alt="逃离迷人的花园" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/18/4399_16174677793.jpg">
+                        <b>逃离迷人的花园</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237076.htm">
+                        <img alt="快乐男孩亨利逃脱" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/18/4399_16084582872.jpg">
+                        <b>快乐男孩亨利逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237072.htm">
+                        <img alt="自然森林大逃脱" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/18/4399_15583035946.jpg">
+                        <b>自然森林大逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237071.htm">
+                        <img alt="逃离橄榄树园" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/18/4399_15544911162.jpg">
+                        <b>逃离橄榄树园</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237070.htm">
+                        <img alt="棕色母鸡逃脱" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/18/4399_15472816252.jpg">
+                        <b>棕色母鸡逃脱</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237068.htm">
+                        <img alt="营救学生" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/18/4399_15371044534.jpg">
+                        <b>营救学生</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237067.htm">
+                        <img alt="逃离顶尖音乐会" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/18/4399_15430769660.jpg">
+                        <b>逃离顶尖音乐会</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237066.htm">
+                        <img alt="救援一对猫" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/18/4399_15322548231.jpg">
+                        <b>救援一对猫</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237064.htm">
+                        <img alt="救援兽人战士" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/18/4399_15274596586.jpg">
+                        <b>救援兽人战士</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237062.htm">
+                        <img alt="城堡的大秘密" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/18/4399_14284455515.jpg">
+                        <b>城堡的大秘密</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237061.htm">
+                        <img alt="时尚女学生穿搭" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/19/4399_14534395495.jpg">
+                        <b>时尚女学生穿搭</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/16_1.htm">装扮类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237060.htm">
+                        <img alt="流浪的星球" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/18/4399_14140069935.jpg">
+                        <b>流浪的星球</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237059.htm">
+                        <img alt="合并战兵2048" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/18/4399_11304853471.jpg">
+                        <b>合并战兵2048</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/11_1.htm">敏捷篇</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237058.htm">
+                        <img alt="鲜花城堡" lzimg="1" lz_src="//imga4.5054399.com/upload_pic/2023/10/18/4399_11341686613.jpg">
+                        <b>鲜花城堡</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237057.htm">
+                        <img alt="最后一件" lzimg="1" lz_src="//imga3.5054399.com/upload_pic/2023/10/18/4399_11233202521.jpg">
+                        <b>最后一件</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237056.htm">
+                        <img alt="烧脑大师" lzimg="1" lz_src="//imga2.5054399.com/upload_pic/2023/10/18/4399_11140436563.jpg">
+                        <b>烧脑大师</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237055.htm">
+                        <img alt="寻找气球姑娘" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/18/4399_10400477910.jpg">
+                        <b>寻找气球姑娘</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/5_1.htm">益智类</a>
+                    </em>
+                    <em>2023-10-19</em>
+                </li>
+                <li>
+                    <a href="/flash/237005.htm">
+                        <img alt="葫芦娃各显神通" lzimg="1" lz_src="//imga1.5054399.com/upload_pic/2023/10/18/4399_11184986361.jpg">
+                        <b>葫芦娃各显神通</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/8_1.htm">策略类</a>
+                    </em>
+                    <em>2023-10-18</em>
+                </li>
+                <li>
+                    <a href="/flash/237054.htm">
+                        <img alt="停车我最强" lzimg="1" lz_src="//imga5.5054399.com/upload_pic/2023/10/18/4399_10251180467.jpg">
+                        <b>停车我最强</b>
+                    </a>
+                    <em>
+                        <a href="/flash_fl/3_1.htm">体育类</a>
+                    </em>
+                    <em>2023-10-18</em>
+                </li>
+            </ul>
+            <div class="pag" id="pagg">
+                <a class="on">1</a>
+                <a href="/flash/new_2.htm" target=_self>2</a>
+                <a href="/flash/new_3.htm" target=_self>3</a>
+                <a href="/flash/new_4.htm" target=_self>4</a>
+                <a href="/flash/new_5.htm" target=_self>5</a>
+                <a href="/flash/new_6.htm" target=_self>6</a>
+                <a href="/flash/new_7.htm" target=_self>7</a>
+                <a href="/flash/new_8.htm" target=_self>8</a>
+                <a href="/flash/new_9.htm" target=_self>9</a>
+                <a href="/flash/new_10.htm" target=_self>10</a>
+                <a class="w1" href="/flash/new_2.htm" target=_self>下一页</a>
+            </div>
+        </div>
+        <div class="bre m15 cf">
+            <div class="title">
+                <a href="/flash/game100.htm" class="a">推荐游戏</a>
+            </div>
+            <div class="oh">
+                <ul class="sec-1 m15 cf">
+                    <li>
+                        <a href="//www.4399.com/">
+                            <strong>小游戏</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.4399.cn/">4399手机游戏网</a>
+                    </li>
+                    <li>
+                        <a href="/flash/seer.htm">赛尔号</a>
+                    </li>
+                    <li>
+                        <a href="/flash/32979.htm">洛克王国</a>
+                    </li>
+                    <li>
+                        <a href="//news.4399.com/yssy/">原神下载</a>
+                    </li>
+                    <li>
+                        <a href="//news.4399.com/smzhsy/">使命召唤手游</a>
+                    </li>
+                    <li>
+                        <a href="//news.4399.com/wzlm/">王者荣耀</a>
+                    </li>
+                    <li>
+                        <a href="//app.4399.cn/">4399游戏盒</a>
+                    </li>
+                </ul>
+                <ul class="sec-2 cf">
+                    <li>
+                        <a href="//h.4399.com/">
+                            <strong>H5游戏</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//www.4399dmw.com/donghua/">
+                            <strong>动画片大全</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//news.4399.com/">
+                            <strong>游戏资讯</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/special/1.htm">
+                            <strong>双人小游戏</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="//my.4399.com/yxssjj2/">
+                            <strong>生死狙击2</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/flash/12439.htm">4399弹弹堂</a>
+                    </li>
+                    <li>
+                        <a href="//www.4399.com/">4399小游戏</a>
+                    </li>
+                    <li>
+                        <a href="//h.4399.com/app/">4399在线玩</a>
+                    </li>
+                    <li>
+                        <a href="//a.4399.cn">安卓游戏</a>
+                    </li>
+                    <li>
+                        <a href="/special/286.htm">小马宝莉</a>
+                    </li>
+                    <li>
+                        <a href="//www.3839.com/a/113508.htm">英雄联盟手游</a>
+                    </li>
+                    <li>
+                        <a href="/flash/zmhj.htm">造梦西游</a>
+                    </li>
+                    <li>
+                        <a href="/flash/">最新小游戏</a>
+                    </li>
+                    <li>
+                        <a href="/special/7.htm">做饭小游戏</a>
+                    </li>
+                    <li>
+                        <a href="/special/241.htm">森林冰火人</a>
+                    </li>
+                    <li>
+                        <a href="/flash/136516.htm">消灭星星</a>
+                    </li>
+                    <li>
+                        <a href="/flash/210650.htm">造梦无双</a>
+                    </li>
+                    <li>
+                        <a href="/special/8.htm">连连看</a>
+                    </li>
+                    <li>
+                        <a href="/flash/234480.htm">小鳄鱼爱洗澡</a>
+                    </li>
+                    <li>
+                        <a href="/flash/233799.htm">糖豆人</a>
+                    </li>
+                    <li>
+                        <a href="/flash/18012.htm">植物大战僵尸</a>
+                    </li>
+                    <li>
+                        <a href="/special/242.htm">乐高</a>
+                    </li>
+                    <li>
+                        <a href="/special/90.htm">闯关</a>
+                    </li>
+                    <li>
+                        <a href="/special/13.htm">格斗</a>
+                    </li>
+                    <li>
+                        <a href="/special/126.htm">大炮</a>
+                    </li>
+                    <li>
+                        <a href="/special/34.htm">黄金矿工</a>
+                    </li>
+                    <li>
+                        <a href="/special/239.htm">象棋</a>
+                    </li>
+                    <li>
+                        <a href="/special/14.htm">泡泡堂</a>
+                    </li>
+                    <li>
+                        <a href="https://y.4399.com/">4399云游戏</a>
+                    </li>
+                    <li>
+                        <a href="/flash/776.htm">宠物连连看</a>
+                    </li>
+                    <li>
+                        <a href="//www.4399.com/">小游戏大全</a>
+                    </li>
+                    <li>
+                        <a href="//www.4399dmw.com/">动漫网</a>
+                    </li>
+                    <li>
+                        <a href="//www.4399.com/flash/203569.htm">斗罗大陆H5</a>
+                    </li>
+                    <li>
+                        <a href="/special/143.htm">斗地主</a>
+                    </li>
+                    <li>
+                        <a href="/special/66.htm">祖玛</a>
+                    </li>
+                    <li>
+                        <a href="//my.4399.com/yxsgqyz/">三国群英传</a>
+                    </li>
+                    <li>
+                        <a href="/special/59.htm">塔防游戏</a>
+                    </li>
+                    <li>
+                        <a href="/special/18.htm">超级玛丽</a>
+                    </li>
+                    <li>
+                        <a href="/special/5.htm">密室逃脱</a>
+                    </li>
+                    <li>
+                        <a href="//www.4399.com/pcgame/">客户端游戏</a>
+                    </li>
+                    <li>
+                        <a href="/flash/205551.htm">死神vs火影</a>
+                    </li>
+                    <li>
+                        <a href="https://my.4399.com/yxmsdzls/">美食大战老鼠</a>
+                    </li>
+                    <li>
+                        <a href="/special/136.htm">火柴人</a>
+                    </li>
+                    <li>
+                        <a href="//www.3839.com/">好游快爆</a>
+                    </li>
+                    <li>
+                        <a href="/flash/gamehw.htm">好玩的网页游戏</a>
+                    </li>
+                    <li>
+                        <a href="https://my.4399.com/yxsgs/">三国杀</a>
+                    </li>
+                    <li>
+                        <a href="//news.4399.com/pubgsy/">和平精英</a>
+                    </li>
+                    <li>
+                        <a href="/special/260.htm">3D游戏</a>
+                    </li>
+                    <li>
+                        <a href="/special/17.htm">海绵宝宝</a>
+                    </li>
+                    <li>
+                        <a href="/flash/227919.htm">地铁跑酷</a>
+                    </li>
+                    <li>
+                        <a href="/flash/203517.htm">扫雷</a>
+                    </li>
+                    <li>
+                        <a href="//www.3839.com/a/101225.htm">使命召唤手游下载</a>
+                    </li>
+                    <li>
+                        <a href="/special/148.htm">无敌版小游戏</a>
+                    </li>
+                    <li>
+                        <a href="/special/219.htm">单人游戏</a>
+                    </li>
+                    <li>
+                        <a href="//www.3839.com/a/130519.htm">绝地求生2</a>
+                    </li>
+                    <li>
+                        <a href="/special/28.htm">赛车小游戏</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="bre-m">
+                <script language="javascript">
+                    var basic_game_info = [[151038, '造梦西游4', '/flash/151038.htm#index0', '//imga4.5054399.com/upload_pic/2023/6/30/4399_17410563587.jpg'], [71403, '4399涂鸦画板', '//zuopin.4399.com/tuya/#index0', '//imga4.5054399.com/upload_pic/2016/2/29/4399_17484422351.jpg'], [118852, '生死狙击', 'https://ssjj.4399.com/#index0', '//imga3.5054399.com/upload_pic/2023/9/28/4399_14134793184.jpg'], [1382, '宠物连连看2.5版', '/flash/1382.htm#index0', '//imga3.5054399.com/upload_pic/2016/9/22/4399_17493914511.jpg'], [110116, '拳皇wing1.85无敌版', '/flash/110116.htm#index0', '//imga2.5054399.com/upload_pic/2016/2/25/4399_09330091389.jpg'], [3881, 'Q版泡泡堂', '/flash/3881.htm#index0', '//imga2.5054399.com/upload_pic/2016/2/25/4399_09220465358.jpg'], [176245, '死神VS火影2.6', '/flash/176245.htm#index0', '//imga1.5054399.com/upload_pic/2016/6/27/4399_15415102420.jpg'], [96275, '快乐美发师3', '/flash/96275.htm#index0', '//imga1.5054399.com/upload_pic/2016/2/25/4399_09273734355.jpg'], [113790, '找你妹正式版', '/flash/113790.htm#index0', '//imga1.5054399.com/upload_pic/2016/2/20/4399_16124255586.jpg'], [133630, 'Q版泡泡堂7', '/flash/133630.htm#index0', '//imga1.5054399.com/upload_pic/2016/2/25/4399_09351876854.jpg'], [127539, '4399火线精英', 'https://news.4399.com/hxjy/#index0', '//imga5.5054399.com/upload_pic/2023/9/28/4399_13594328169.jpg'], [172188, '西游灭妖传', '/flash/172188.htm#index0', '//imga4.5054399.com/upload_pic/2021/2/24/4399_15535027319.jpg'], [90302, '火柴人打羽毛球2', '/flash/90302.htm#index0', '//imga3.5054399.com/upload_pic/2016/2/25/4399_09272483064.jpg'], [18012, '植物大战僵尸', '/flash/18012.htm#index0', '//imga3.5054399.com/upload_pic/2016/2/18/4399_18432063237.jpg'], [130254, '节奏大师', '/flash/130254.htm#index0', '//imga5.5054399.com/upload_pic/2016/2/24/4399_20052697338.jpg'], [124679, '泡泡堂卡丁车', '/flash/124679.htm#index0', '//imga5.5054399.com/upload_pic/2016/2/23/4399_17063937456.jpg'], [73386, '快刀切水果3', '/flash/73386.htm#index0', '//imga2.5054399.com/upload_pic/2016/2/25/4399_09264656496.jpg'], [17801, '宠物连连看3.1', '/flash/17801.htm#index0', '//imga2.5054399.com/upload_pic/2016/2/22/4399_17213062473.jpg'], [130635, '爸爸去哪儿之原版大冒险', '/flash/130635.htm#index0', '//imga1.5054399.com/upload_pic/2019/8/8/4399_11000180171.jpg'], [117227, '粘液实验室2', '/flash/117227.htm#index0', '//imga3.5054399.com/upload_pic/2016/2/20/4399_16021693663.jpg'], [54423, '4399打豆豆', '/flash/54423.htm#index0', '//imga4.5054399.com/upload_pic/2016/2/22/4399_20085427468.jpg'], [10305, '双人旋转赛车', '/flash/10305.htm#index0', '//imga1.5054399.com/upload_pic/2016/2/23/4399_16424729120.jpg'], [93398, '大鱼吃小鱼双人版', '/flash/93398.htm#index0', '//imga4.5054399.com/upload_pic/2016/2/23/4399_20042692877.jpg'], [78072, '造梦西游3', '/flash/78072.htm#index0', '//imga3.5054399.com/upload_pic/2021/5/14/4399_11313629194.jpg'], [131667, '保卫萝卜挑战版2', '/flash/131667.htm#index0', '//imga3.5054399.com/upload_pic/2016/2/25/4399_09351176342.jpg'], [118852, '生死狙击', 'https://ssjj.4399.com/#index0', '//imga3.5054399.com/upload_pic/2023/9/28/4399_14134793184.jpg'], [1382, '宠物连连看2.5版', '/flash/1382.htm#index0', '//imga3.5054399.com/upload_pic/2016/9/22/4399_17493914511.jpg'], [110116, '拳皇wing1.85无敌版', '/flash/110116.htm#index0', '//imga2.5054399.com/upload_pic/2016/2/25/4399_09330091389.jpg'], [3881, 'Q版泡泡堂', '/flash/3881.htm#index0', '//imga2.5054399.com/upload_pic/2016/2/25/4399_09220465358.jpg'], [128302, '消灭星星3电脑版', '/flash/128302.htm#index0', '//imga3.5054399.com/upload_pic/2013/12/11/4399_08463247691.jpg'], [19063, '制作美味蛋糕', '/flash/19063.htm#index0', '//imga4.5054399.com/upload_pic/2016/2/25/4399_09235221328.jpg'], [96275, '快乐美发师3', '/flash/96275.htm#index0', '//imga1.5054399.com/upload_pic/2016/2/25/4399_09273734355.jpg'], [113790, '找你妹正式版', '/flash/113790.htm#index0', '//imga1.5054399.com/upload_pic/2016/2/20/4399_16124255586.jpg'], [133630, 'Q版泡泡堂7', '/flash/133630.htm#index0', '//imga1.5054399.com/upload_pic/2016/2/25/4399_09351876854.jpg'], [128302, '消灭星星3电脑版', '/flash/128302.htm#index0', '//imga3.5054399.com/upload_pic/2013/12/11/4399_08463247691.jpg'], [90302, '火柴人打羽毛球2', '/flash/90302.htm#index0', '//imga3.5054399.com/upload_pic/2016/2/25/4399_09272483064.jpg'], [18012, '植物大战僵尸', '/flash/18012.htm#index0', '//imga3.5054399.com/upload_pic/2016/2/18/4399_18432063237.jpg'], [130254, '节奏大师', '/flash/130254.htm#index0', '//imga5.5054399.com/upload_pic/2016/2/24/4399_20052697338.jpg'], [124679, '泡泡堂卡丁车', '/flash/124679.htm#index0', '//imga5.5054399.com/upload_pic/2016/2/23/4399_17063937456.jpg'], [73386, '快刀切水果3', '/flash/73386.htm#index0', '//imga2.5054399.com/upload_pic/2016/2/25/4399_09264656496.jpg'], [17801, '宠物连连看3.1', '/flash/17801.htm#index0', '//imga2.5054399.com/upload_pic/2016/2/22/4399_17213062473.jpg'], [130635, '爸爸去哪儿之原版大冒险', '/flash/130635.htm#index0', '//imga1.5054399.com/upload_pic/2019/8/8/4399_11000180171.jpg'], [117227, '粘液实验室2', '/flash/117227.htm#index0', '//imga3.5054399.com/upload_pic/2016/2/20/4399_16021693663.jpg'], [54423, '4399打豆豆', '/flash/54423.htm#index0', '//imga4.5054399.com/upload_pic/2016/2/22/4399_20085427468.jpg'], [10305, '双人旋转赛车', '/flash/10305.htm#index0', '//imga1.5054399.com/upload_pic/2016/2/23/4399_16424729120.jpg'], [93398, '大鱼吃小鱼双人版', '/flash/93398.htm#index0', '//imga4.5054399.com/upload_pic/2016/2/23/4399_20042692877.jpg']];
+                    var basic_game_info_play = [[78072, '造梦西游3', '/flash/78072.htm#history0', '//imga3.5054399.com/upload_pic/2021/5/14/4399_11313629194.jpg', 1], [71403, '4399涂鸦画板', '//zuopin.4399.com/tuya/#history0', '//imga4.5054399.com/upload_pic/2016/2/29/4399_17484422351.jpg', 1], [118852, '生死狙击', 'https://ssjj.4399.com/#history0', '//imga3.5054399.com/upload_pic/2023/9/28/4399_14134793184.jpg', 1], [133630, 'Q版泡泡堂7', '/flash/133630.htm#history0', '//imga1.5054399.com/upload_pic/2016/2/25/4399_09351876854.jpg', 1], [20660, '森林冰火人中文版', '/flash/20660.htm#history0', '//imga1.5054399.com/upload_pic/2016/2/22/4399_17341879193.jpg', 1], [176245, '死神VS火影2.6', '/flash/176245.htm#history0', '//imga1.5054399.com/upload_pic/2016/6/27/4399_15415102420.jpg', 1], [131667, '保卫萝卜挑战版2', '/flash/131667.htm#history0', '//imga3.5054399.com/upload_pic/2016/2/25/4399_09351176342.jpg', 1], [112909, '神庙逃亡2', '/flash/112909.htm#history0', '//imga5.5054399.com/upload_pic/2016/2/26/4399_10084980523.jpg', 1], [136667, '萌少年酷跑电脑版', '/flash/136667.htm#history0', '//imga3.5054399.com/upload_pic/2016/2/23/4399_20273241244.jpg', 1], [21674, '二战前线2无敌版', '/flash/21674.htm#history0', '//imga5.5054399.com/upload_pic/2016/2/29/4399_16164276015.jpg', 1], [127319, '皇城突袭前线无敌版', '/flash/127319.htm#history0', '//imga5.5054399.com/upload_pic/2016/2/24/4399_13142843236.jpg', 1], [1382, '宠物连连看2.5版', '/flash/1382.htm#history0', '//imga3.5054399.com/upload_pic/2016/9/22/4399_17493914511.jpg', 1], [48399, '卡布西游', '/flash/48399.htm#history0', '//imga5.5054399.com/upload_pic/2017/9/6/4399_16011281451.jpg', 1], [93551, '小鳄鱼爱洗澡中文版', '/flash/93551.htm#history0', '//imga2.5054399.com/upload_pic/2017/1/24/4399_10181217218.jpg', 1], [73386, '快刀切水果3', '/flash/73386.htm#history0', '//imga2.5054399.com/upload_pic/2016/2/25/4399_09264656496.jpg', 1], [1602, '黄金矿工中文版', '/flash/1602.htm#history0', '//imga3.5054399.com/upload_pic/2016/2/23/4399_20060138878.jpg', 1], [93398, '大鱼吃小鱼双人版', '/flash/93398.htm#history0', '//imga4.5054399.com/upload_pic/2016/2/23/4399_20042692877.jpg', 1], [127539, '4399火线精英', 'https://news.4399.com/hxjy/#history0', '//imga5.5054399.com/upload_pic/2023/9/28/4399_13594328169.jpg', 1], [171322, '老爹烘培店', '/flash/171322.htm#history0', '//imga3.5054399.com/upload_pic/2016/3/15/4399_09400836256.jpg', 1], [54423, '4399打豆豆', '/flash/54423.htm#history0', '//imga4.5054399.com/upload_pic/2016/2/22/4399_20085427468.jpg', 1], [18012, '植物大战僵尸', '/flash/18012.htm#history0', '//imga3.5054399.com/upload_pic/2016/2/18/4399_18432063237.jpg', 1], [17403, '青蛙祖玛', '/flash/17403.htm#history0', '//imga4.5054399.com/upload_pic/2016/2/22/4399_20524038407.jpg', 1], [117252, '乐高游戏嘉年华3', '/flash/117252.htm#history0', '//imga3.5054399.com/upload_pic/2016/2/25/4399_09341292954.jpg', 1], [400, '这才叫唱歌', '/flash/400.htm#history0', '//imga1.5054399.com/upload_pic/7272/1/400.jpg', 1], [128302, '消灭星星3电脑版', '/flash/128302.htm#history0', '//imga3.5054399.com/upload_pic/2013/12/11/4399_08463247691.jpg', 1], [118852, '生死狙击', 'https://ssjj.4399.com/#history0', '//imga3.5054399.com/upload_pic/2023/9/28/4399_14134793184.jpg', 1], [96275, '快乐美发师3', '/flash/96275.htm#history0', '//imga1.5054399.com/upload_pic/2016/2/25/4399_09273734355.jpg', 1], [20660, '森林冰火人中文版', '/flash/20660.htm#history0', '//imga1.5054399.com/upload_pic/2016/2/22/4399_17341879193.jpg', 1], [133630, 'Q版泡泡堂7', '/flash/133630.htm#history0', '//imga1.5054399.com/upload_pic/2016/2/25/4399_09351876854.jpg', 1], [110116, '拳皇wing1.85无敌版', '/flash/110116.htm#history0', '//imga2.5054399.com/upload_pic/2016/2/25/4399_09330091389.jpg', 1], [131667, '保卫萝卜挑战版2', '/flash/131667.htm#history0', '//imga3.5054399.com/upload_pic/2016/2/25/4399_09351176342.jpg', 1], [112909, '神庙逃亡2', '/flash/112909.htm#history0', '//imga5.5054399.com/upload_pic/2016/2/26/4399_10084980523.jpg', 1], [136667, '萌少年酷跑电脑版', '/flash/136667.htm#history0', '//imga3.5054399.com/upload_pic/2016/2/23/4399_20273241244.jpg', 1], [21674, '二战前线2无敌版', '/flash/21674.htm#history0', '//imga5.5054399.com/upload_pic/2016/2/29/4399_16164276015.jpg', 1], [127319, '皇城突袭前线无敌版', '/flash/127319.htm#history0', '//imga5.5054399.com/upload_pic/2016/2/24/4399_13142843236.jpg', 1], [71403, '4399涂鸦画板', '//zuopin.4399.com/tuya/#history0', '//imga4.5054399.com/upload_pic/2016/2/29/4399_17484422351.jpg', 1], [1382, '宠物连连看2.5版', '/flash/1382.htm#history0', '//imga3.5054399.com/upload_pic/2016/9/22/4399_17493914511.jpg', 1], [48399, '卡布西游', '/flash/48399.htm#history0', '//imga5.5054399.com/upload_pic/2017/9/6/4399_16011281451.jpg', 1], [93551, '小鳄鱼爱洗澡中文版', '/flash/93551.htm#history0', '//imga2.5054399.com/upload_pic/2017/1/24/4399_10181217218.jpg', 1], [73386, '快刀切水果3', '/flash/73386.htm#history0', '//imga2.5054399.com/upload_pic/2016/2/25/4399_09264656496.jpg', 1], [1602, '黄金矿工中文版', '/flash/1602.htm#history0', '//imga3.5054399.com/upload_pic/2016/2/23/4399_20060138878.jpg', 1], [93398, '大鱼吃小鱼双人版', '/flash/93398.htm#history0', '//imga4.5054399.com/upload_pic/2016/2/23/4399_20042692877.jpg', 1], [118852, '生死狙击', 'https://ssjj.4399.com/#history0', '//imga3.5054399.com/upload_pic/2023/9/28/4399_14134793184.jpg', 1], [43728, '老爹汉堡店', '/flash/43728.htm#history0', '//imga4.5054399.com/upload_pic/2016/2/17/4399_15514755682.jpg', 1], [54423, '4399打豆豆', '/flash/54423.htm#history0', '//imga4.5054399.com/upload_pic/2016/2/22/4399_20085427468.jpg', 1], [18012, '植物大战僵尸', '/flash/18012.htm#history0', '//imga3.5054399.com/upload_pic/2016/2/18/4399_18432063237.jpg', 1], [17403, '青蛙祖玛', '/flash/17403.htm#history0', '//imga4.5054399.com/upload_pic/2016/2/22/4399_20524038407.jpg', 1], [58722, '霸气的蠕虫', '/flash/58722.htm#history0', '//imga3.5054399.com/upload_pic/2016/2/25/4399_09254903832.jpg', 1], [117252, '乐高游戏嘉年华3', '/flash/117252.htm#history0', '//imga3.5054399.com/upload_pic/2016/2/25/4399_09341292954.jpg', 1]];
+                </script>
+                <div class="copy">
+                    <div class="exp">
+                        作品版权归作者所有，如果侵犯了您的版权，请<a href="//my.4399.com/joinus/contact.html">联系我们</a>
+                        ，本站将在3个工作日内删除。<br>
+                        <i>温馨提示：</i>
+                        抵制不良游戏，拒绝盗版游戏，注意自我保护，谨防受骗上当，适度游戏益脑，沉迷游戏伤身，合理安排时间，享受健康生活
+                    </div>
+                    <div class="line1">
+                        <a href="//my.4399.com/joinus/index.html">关于本站</a>
+                        |<a href="//my.4399.com/joinus/contact.html">联系本站</a>
+                        |<a href="/gameupload.htm">游戏发布</a>
+                        |<a href="//www.4399api.com/">原创平台</a>
+                        |<a href="//my.4399.com/joinus/zhaopin.html">招聘信息</a>
+                        |<a href="//ptlogin.4399.com/resource/protocol.html?type=1&aids=1,2,3,6,7,10">隐私政策</a>
+                        |
+                        <a class="c1" href="/feedback.htm">
+                            <em></em>
+                            问题反馈
+                        </a>
+                        |<a href="//weibo.com/my4399" rel="nofollow" class="wb"></a>
+                        <a class="tx" rel="nofollow" href=""></a>
+                    </div>
+                    <div class="copy-4399">
+                        <a rel="nofollow" href="http://ccm.mct.gov.cn:80/ccnt/sczr/service/business/emark/toDetail/9F5113E34F5E4443A68F11E8A6E2685C">
+                            <i class="moc"></i>
+                            闽网文〔2021〕4071-076号
+                        </a>
+                        |<a href="/zs/chuban.html">（署）网出证（闽）字第015号</a>
+                        |<a href="//beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="nofollow">ICP证闽B2-20040099</a>
+                        |
+                        <a href="//www.beian.gov.cn/portal/registerSystemInfo?recordcode=35020302000081">
+                            <i class="ghs"></i>
+                            闽公网安备 35020302000081号
+                        </a>
+                        |<a href="/notice/banquan.htm">版权保护投诉指引</a>
+                        <br>
+                        文明办网文明上网举报、纠纷处理及不良内容举报电话：4006834399(转6) |举报邮箱：jubao@4399.com &nbsp;|<a href="//web.4399.com/jiazhang/">未成年人家长监护</a>
+                        <br>
+                        Copyright &copy;2004 - <script>
+                            var date = new Date;
+                            var year = date.getFullYear();
+                            document.write(year);
+                        </script>
+                        4399.com All Rights Reserved. 四三九九网络股份有限公司 &nbsp;版权所有
+                    </div>
+                    <div class="wechat-QR" style="display: none;">
+                        <img src="/images/i2016/QR.png">
+                        微信扫一扫<br>关注4399小游戏
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pop" id="skiner">
+            <div class="pop-top cf">
+                <div class="pop-tab">
+                    <div class="cutover">
+                        <a class="on" href="" id="skincommendtab" onclick="return false;" target="_self" onmouseover="chgskintype(1);return false;">推荐</a>
+                        <a href="" id="skinnewtab" onclick="return false;" target="_self" onmouseover="chgskintype(2);return false;">最新</a>
+                    </div>
+                    <a class="pop-close" href="" target="_self" onclick="return cancelskin();"></a>
+                </div>
+            </div>
+            <ul class="skin-ul cf" id="skincommend"></ul>
+            <ul class="skin-ul cf" id="skinnew"></ul>
+            <div class="save">
+                <a class="btn" target="_self" href="" onclick="return saveskin();">保存</a>
+                <a href="" target="_self" onclick="return cancelskin();">取消</a>
+            </div>
+        </div>
+        <a onclick="window.scrollTo(0,0);return false;" href="#" target="_self" id="__top_ico" class="s-top"></a>
+        <script language="javascript" src="/jss/sosmart1_s.js"></script>
+        <script language="javascript" src="/jss/skiner27.js"></script>
+        <script language="javascript" src="/jss/jquery-1.6.1.min.js"></script>
+        <script language="javascript" src="/jss/newHeadjs2020_s3.js"></script>
+        <script type="text/javascript" src="/js/globalSearchWord.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                if (typeof (possible_search_words) != "undefined") {
+                    var sic = document.getElementById("smart_input");
+                    function jsrnd(n, m) {
+                        var c = m - n + 1;
+                        return Math.floor(Math.random() * c + n);
+                    }
+                    var jsrndbum = jsrnd(0, possible_search_words.length - 1);
+                    var defaultsearch = possible_search_words[jsrndbum];
+                    if (defaultsearch) {
+                        sic.value = defaultsearch;
+                        sic.onfocus = function() {
+                            if (sic.value == defaultsearch) {
+                                sic.value = '';
+                                sic.style.color = "#000";
+                            }
+                        }
+                        ;
+                        sic.onblur = function() {
+                            if (sic.value == '') {
+                                sic.value = defaultsearch;
+                                sic.style.color = "#bcbcbc";
+                            }
+                        }
+                        ;
+                        sic.placeholder = defaultsearch;
+                    }
+                }
+            });
+        </script>
+        <script language="javascript" src="/jss/lazyloading.js"></script>
+        <script src="//4399stat.5054399.com/js/click.js"></script>
+        <script src='//www.4399.com/js/4399stat.js' language='JavaScript' charset='gb2312'></script>
+        <script type="text/javascript">
+            $(".tx").mouseenter(function() {
+                $(".wechat-QR").show();
+            }).mouseleave(function() {
+                $(".wechat-QR").hide();
+            }).click(function() {
+                return false;
+            });
+        </script>
+    </body>
+</html>
