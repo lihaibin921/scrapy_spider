@@ -15,18 +15,17 @@
         PS:
             无论是ua , cookie等都只是验证手段, 最终是否封禁还是看ip访问频率 , 有个ip池子会大大提高效率
             反爬机制(大概):
-                对ip进行的限流 限流时间大约30min
+                大概是5min请求数计算, 据说150左右(我靠, 这也太低了)
+                惩罚: 对ip进行的限流 限流时间大约30min
                     限流期间50%请求通过, 50%请求非法 , 降速也无效
                     怎么实现的?
                         猜测:
                             1 常用的 计数器, 窗口, 令牌桶, 漏筒桶 都不太像
                             2 nginx? 分布式一部分机器拒绝, 一部分通过?
                             3 难不成就真的做了个概率限流吧?
-                另外:
-                    限流期间
-                        1  登录账号刷新每次都成功
-                        2 无痕窗口打开的游客账号概率成功
-                        # 对同一ip不同种用户还会区别对待?
+                另外
+                    cookie中携带SESSDATA 字段, 即登录用户, 限流算法有变 , 访问量放宽
+
 
 """
 from typing import Any
@@ -58,9 +57,9 @@ class BiliUserSpider(scrapy.Spider):
     name = 'bili_user'
     allowed_domains = ['api.bilibili.com']
     custom_settings = {
-        "DOWNLOAD_DELAY": "1",  # 请求延迟 可以为小数
+        # "DOWNLOAD_DELAY": "0.04",  # 请求延迟 可以为小数
         "CONCURRENT_REQUESTS": "16",  # 最大并发数 默认16
-        "CONCURRENT_REQUESTS_PER_DOMAIN": "4",  # 最大单域名并发数 默认8
+        "CONCURRENT_REQUESTS_PER_DOMAIN": "8",  # 最大单域名并发数 默认8
         "ITEM_PIPELINES": {
             "scrapy_spider.pipelines.BiliUsersSavePipeline": 300
         }
@@ -72,8 +71,8 @@ class BiliUserSpider(scrapy.Spider):
 
     def start_requests(self):
         bili_wbi = bw.BiliWbi()
-        start_uid = 51142  # 初始uid 需手动更改
-        end_uid = start_uid + 100  # 截止uid 不包含
+        start_uid = 111142  # 初始uid 需手动更改
+        end_uid = start_uid + 10000  # 截止uid 不包含
         for uid in range(start_uid, end_uid):
             # 增加wbi加密字段 关键校验字段
             query = bili_wbi.get_wbi({"mid": uid})
@@ -132,11 +131,8 @@ class BiliUserSpider(scrapy.Spider):
             elif code == -401:
                 # 被判定为爬虫
                 error_desc = response_json['data']['ga_data']['decisions']
-                # error_buvid = response_json['data']['ga_data']['decision_ctx']['buvid']
-
-                logging.error(
-                    f"非法请求: {error_desc} : {response.url}")
-                # f"非法请求: {error_desc} : {response.url} , 失效buvid3 :{error_buvid} ")
+                logging.warning(
+                    f"非法请求: uid:{uid} , desc:{error_desc}")
 
                 # 失败直接存库, 之后再重爬
                 item = BiliUserItem()
@@ -146,7 +142,7 @@ class BiliUserSpider(scrapy.Spider):
 
             else:
                 # 其余情况 -403无权限 -404账户不存在等
-                logging.error(f"请求失败 {response.url} ,response: {response_json}")
+                logging.warning(f"无效uid: {uid} ,response: {response_json}")
 
         except Exception as e:
             logging.error(f'响应解析异常 : {e} , {response.url} , {response.text}')

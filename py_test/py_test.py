@@ -26,7 +26,18 @@ def uuid_test():
     print(uuid.uuid4())
 
 
+def empty_test():
+    str = " "
+    str2 = ""
+    print(str.isspace())  # 只包含空格为True , 空/其他字符串为False
+    print(str2.isspace())
+    print(len(str))
+    print(len(str2))
+    print(len(str.strip()))  # 去前后空格后判断长度
+
+
 if __name__ == '__main__':
     # range_test()
     # time_test()
-    uuid_test()
+    # uuid_test()
+    empty_test()

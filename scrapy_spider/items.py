@@ -44,3 +44,17 @@ class BiliUserItem(scrapy.Item):
 
     # 记录是否爬取失败 用于pipeline处理
     crawl_status = scrapy.Field(serializer=bool)
+
+
+class BiliLiveUserItem(scrapy.Item):
+    uid = scrapy.Field(serializer=int)
+    name = scrapy.Field()
+    sex = scrapy.Field()
+    face = scrapy.Field()
+    follower = scrapy.Field()
+
+    official_type = scrapy.Field()
+    official_desc = scrapy.Field()
+
+    # 记录是否爬取失败 用于pipeline处理
+    crawl_status = scrapy.Field(serializer=bool)

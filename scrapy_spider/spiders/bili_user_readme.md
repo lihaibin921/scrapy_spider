@@ -3,12 +3,13 @@
 ## 用户页面入口
 
 **https://space.bilibili.com/{uid}**   
-自己写完才发现现成的轮子 , 感激不尽 https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/docs/user/info.md
+自己写完才发现现成的轮子 , 感激不尽 https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/docs/user/info.md    
+/x/space 下的api限流最严重, 大概150/10min就会限流, 携带登录信息的cookie会好一些
 
     基本信息 
         https://api.bilibili.com/x/space/wbi/acc/info?mid={uid}
-            必须带wts w_rid字段验证 , ua和referer是否验证未知
-            cookie中 buvid3 也有可能被验证 # 过期的buvid3也会认证成功, 不知道具体逻辑
+            必须带wts w_rid字段验证 , ua有时会验证, 带一个合法的即可
+            部分ip访问 需要cookie中 buvid3被验证
                 # 最下面说明buvid3获取方式
         字段分析(只说明重要字段) :
             mid : uid
@@ -35,6 +36,22 @@
             birthday : 生日 MM-DD
             school : 学校 很少有人写 不爬
             tags : 个人标签 字符串列表 没什么标准 不爬
+
+        曲线救国 通过直播间获得up信息
+            https://api.live.bilibili.com/live_user/v1/Master/info?uid={uid}
+            优点: 几乎无限流 缺点: 信息缺失
+            info 基本信息
+                uid : uid
+                uname : 名称
+                face : 头像
+                gender : 性别 -1 保密, 0 女, 1 男
+                official_verify 认证信息
+                    type : -1无 , 0 个人认证 , 1 机构认证
+                    desc : 认证描述
+            exp 主播直播等级信息 不重要
+            follower_num : 主播粉丝数
+            room_news : 直播间信息
+            room_id : 直播间id
 
     关注数 粉丝数信息
         https://api.bilibili.com/x/relation/stat?vmid={uid}
@@ -74,5 +91,6 @@
         16位uid生成规则未知 , 比较分散 , 并且多为新用户, 放弃爬取
 
     游客获取cookie中的buvid3和buvid4属性
+        # 逆向参考BiliWbi类 , 一个类似uuid的数据, 只要合法即可
         接口 https://api.bilibili.com/x/frontend/finger/spi   
         {"code":0,"data":{"b_3":"65F6A82B-DB6C-1B13-9D7D-D2DD17C3D26986443infoc","b_4":"530CBDDF-EA9E-5871-A18E-FC24C32899BA86443-023110220-oRXBPz1sNw5ZQHkb+gth7w=="},"message":"ok"}

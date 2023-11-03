@@ -10,7 +10,9 @@ import pandas as pd
 import scrapy_spider.utils.pathutil as pathutil
 import pymysql
 from scrapy_spider.settings import DATABASE_BILI_SETTINGS
-from scrapy_spider.items import BiliUserItem
+from scrapy_spider.items import BiliUserItem, BiliLiveUserItem
+from scrapy_spider.spiders.bili_user_spider import BiliUserSpider
+from scrapy_spider.spiders.bili_live_user_spider import BiliLiveUserSpider
 import logging
 
 
@@ -59,6 +61,13 @@ class GameNewWritePipeline():
         print(f'共写入csv {self.write_count} 次 , 写入 {self.data_count} 条数据')
 
 
+"""
+    bili_user表写入数据
+        BiliLiveUserSpider 和 BiliUserSpider公用, 兼容一下好了, 不重新写一个Pipeline 
+        可读性差点
+"""
+
+
 class BiliUsersSavePipeline():
     def __init__(self):
         self.conn = pymysql.connect(
@@ -70,8 +79,9 @@ class BiliUsersSavePipeline():
             charset='utf8'  # 注意必须是utf8 不是utf-8
         )
         self.cur = self.conn.cursor()
-        self.data_to_insert = []    # 用列表缓存下, 执行批量插入
+        self.data_to_insert = []  # 用列表缓存下, 执行批量插入
         self.count = 0
+        self.fail_count = 0
 
     def open_spider(self, spider):
         pass
@@ -95,12 +105,34 @@ class BiliUsersSavePipeline():
 
             else:
                 # 数据无效, 存uid进失败表
+                self.fail_count += 1
+                self._insert_fail_data(item['uid'])
+        elif isinstance(item, BiliLiveUserItem):
+            crawl_status = item['crawl_status']
+            if crawl_status:
+                # 数据有效 , 批量插入用户表
+                self.data_to_insert.append((
+                    item['uid'], item['name'], item['sex'], item['face'], item['official_desc'], item['official_type'],
+                    item['follower']
+                ))
+                self.count += 1
+                if len(self.data_to_insert) >= 100:
+                    self._insert_live_datas(self.data_to_insert)
+                    self.data_to_insert = []
+                logging.info(f"爬取成功:  {item['uid']} , {item['name']}")
+
+            else:
+                # 数据无效, 存uid进失败表
+                self.fail_count += 1
                 self._insert_fail_data(item['uid'])
 
     def close_spider(self, spider):
         # 清空数据列表 存入DB
         if self.data_to_insert:
-            self._insert_datas(self.data_to_insert)
+            if isinstance(spider, BiliUserSpider):
+                self._insert_datas(self.data_to_insert)
+            elif isinstance(spider, BiliLiveUserSpider):
+                self._insert_live_datas(self.data_to_insert)
         self.conn.close()
 
     def _insert_datas(self, datas):
@@ -111,7 +143,20 @@ class BiliUsersSavePipeline():
                           "VALUES (%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s, %s ,%s ,%s ,%s)")
             self.cur.executemany(insert_sql, datas)
             self.conn.commit()
-            logging.info(f'插入bili用户数据完成 总插入条数:{self.count}')
+            logging.info(f'入库成功 总条数:{self.count} , 失败数:{self.fail_count}')
+        except pymysql.Error as e:
+            logging.error(f'bili_user数据写入数据库异常 {e}')
+
+    def _insert_live_datas(self, datas):
+        # 存入直播接口获得的up主信息, 信息量更少
+        try:
+            # 注意rank是关键字 需要``括起来
+            insert_sql = (
+                "INSERT IGNORE INTO bili_user(uid , name , sex, face , officialDesc , officialType , follower) "
+                "VALUES (%s ,%s ,%s ,%s ,%s ,%s ,%s)")
+            self.cur.executemany(insert_sql, datas)
+            self.conn.commit()
+            logging.info(f'入库成功 总条数:{self.count} , 失败数:{self.fail_count}')
         except pymysql.Error as e:
             logging.error(f'bili_user数据写入数据库异常 {e}')
 
