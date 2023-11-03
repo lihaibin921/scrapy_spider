@@ -40,6 +40,15 @@ DEFAULT_REQUEST_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
 }
 
+# mysql Database setting
+DATABASE_BILI_SETTINGS = {
+    'db_name': 'bili',  # 数据库名
+    'db_user': 'root',
+    'db_password': '123456',
+    'db_host': 'localhost',
+    'db_port': 3306
+}
+
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {

@@ -1,0 +1,24 @@
+{
+  "code": -401,
+  "message": "非法访问",
+  "ttl": 1,
+  "data": {
+    "ga_data": {
+      "decisions": [
+        "verify_captcha_level2"
+      ],
+      "risk_level": 1,
+      "grisk_id": "1b60ee4399db70413e9527f04065435a",
+      "decision_ctx": {
+        "buvid": "",
+        "decision_type": "4",
+        "ip": "xxxxxxxxxx",
+        "mid": "0",
+        "origin_scene": "anti_crawler",
+        "scene": "crawler_main_space_wbi_acc_info",
+        "ua": "Mozilla/5.0(Macintosh;IntelMacOSX10_15_7)AppleWebKit/537.36(KHTML,likeGecko)Chrome/114.0.0.0Safari/537.36",
+        "v_voucher": "voucher_ef92c9ef-1edf-429b-8a42-9942f33e9e3a"
+      }
+    }
+  }
+}
