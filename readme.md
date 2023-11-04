@@ -14,6 +14,7 @@
   + items.py : 数据模型
   + pipelines.py : 主要是存储逻辑 , DB操作
   + settings.py : 设置
++ sql : mysql DDL
 
 ---
 
