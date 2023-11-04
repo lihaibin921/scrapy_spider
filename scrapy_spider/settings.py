@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import datetime
 
 BOT_NAME = "scrapy_spider"
 
@@ -38,6 +39,15 @@ ROBOTSTXT_OBEY = False
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+}
+
+# mysql Database setting
+DATABASE_BILI_SETTINGS = {
+    'db_name': 'bili',  # 数据库名
+    'db_user': 'root',
+    'db_password': '123456',
+    'db_host': 'localhost',
+    'db_port': 3306
 }
 
 # Enable or disable spider middlewares
@@ -89,5 +99,11 @@ DEFAULT_REQUEST_HEADERS = {
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+# 输出日志 本地执行控制台就没输出了注意
+# today = datetime.datetime.today()
+# log_file_path = f"log/log_{today.year}_{today.month}_{today.day}.log"
+# LOG_FILE = log_file_path
+# LOG_FILE_APPEND = False  # 直接覆盖
 
 LOG_LEVEL = "INFO"
