@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80021
 File Encoding         : 65001
 
-Date: 2023-11-03 16:44:56
+Date: 2023-11-04 20:50:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,5 +25,5 @@ CREATE TABLE `bili_user_fail` (
   `re_status` int NOT NULL DEFAULT '0' COMMENT '重试状态, 0 未重抓, 1 重抓成功',
   PRIMARY KEY (`id`),
   UNIQUE KEY `uid` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=8041 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=35796 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 SET FOREIGN_KEY_CHECKS=1;
