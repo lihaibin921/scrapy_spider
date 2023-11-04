@@ -4,7 +4,7 @@
 
 **https://space.bilibili.com/{uid}**   
 自己写完才发现现成的轮子 , 感激不尽 https://github.com/SocialSisterYi/bilibili-API-collect/blob/master/docs/user/info.md    
-/x/space 下的api限流最严重, 大概150/10min就会限流, 携带登录信息的cookie会好一些
+/x/space 下的api限流最严重, 大概150/5min就会限流, 携带登录信息的cookie会好一些
 
     基本信息 
         https://api.bilibili.com/x/space/wbi/acc/info?mid={uid}
@@ -94,3 +94,14 @@
         # 逆向参考BiliWbi类 , 一个类似uuid的数据, 只要合法即可
         接口 https://api.bilibili.com/x/frontend/finger/spi   
         {"code":0,"data":{"b_3":"65F6A82B-DB6C-1B13-9D7D-D2DD17C3D26986443infoc","b_4":"530CBDDF-EA9E-5871-A18E-FC24C32899BA86443-023110220-oRXBPz1sNw5ZQHkb+gth7w=="},"message":"ok"}
+
+## 多用户详细信息接口
+    https://api.vc.bilibili.com/account/v1/user/cards?uids=uid1,uid2,uid3
+    参数: uids: uid列表 最多50个
+    验证: 可能需要cookie中携带SESSDATA #登录用户 
+    字段解析: 
+        code : 
+            0成功, -400 请求错误, 600006 参数错误,  600007 超过数量限制
+            600003 主站返回数据为空 # 访问过快触发限流??
+        data : 用户数据列表
+            详细字段参考 基本信息接口 基本一致

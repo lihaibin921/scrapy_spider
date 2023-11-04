@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import datetime
 
 BOT_NAME = "scrapy_spider"
 
@@ -98,5 +99,11 @@ DATABASE_BILI_SETTINGS = {
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
 FEED_EXPORT_ENCODING = "utf-8"
+
+# 输出日志 本地执行控制台就没输出了注意
+# today = datetime.datetime.today()
+# log_file_path = f"log/log_{today.year}_{today.month}_{today.day}.log"
+# LOG_FILE = log_file_path
+# LOG_FILE_APPEND = False  # 直接覆盖
 
 LOG_LEVEL = "INFO"

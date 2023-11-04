@@ -13,6 +13,7 @@ from scrapy_spider.settings import DATABASE_BILI_SETTINGS
 from scrapy_spider.items import BiliUserItem, BiliLiveUserItem
 from scrapy_spider.spiders.bili_user_spider import BiliUserSpider
 from scrapy_spider.spiders.bili_live_user_spider import BiliLiveUserSpider
+from scrapy_spider.spiders.bili_user_cards_spider import BiliUserCardsSpider
 import logging
 
 
@@ -101,7 +102,7 @@ class BiliUsersSavePipeline():
                 if len(self.data_to_insert) >= 100:
                     self._insert_datas(self.data_to_insert)
                     self.data_to_insert = []
-                logging.info(f"爬取成功:  {item['uid']} , {item['name']}")
+                logging.debug(f"爬取成功:  {item['uid']} , {item['name']}")
 
             else:
                 # 数据无效, 存uid进失败表
@@ -119,7 +120,7 @@ class BiliUsersSavePipeline():
                 if len(self.data_to_insert) >= 100:
                     self._insert_live_datas(self.data_to_insert)
                     self.data_to_insert = []
-                logging.info(f"爬取成功:  {item['uid']} , {item['name']}")
+                logging.debug(f"爬取成功:  {item['uid']} , {item['name']}")
 
             else:
                 # 数据无效, 存uid进失败表
@@ -129,7 +130,7 @@ class BiliUsersSavePipeline():
     def close_spider(self, spider):
         # 清空数据列表 存入DB
         if self.data_to_insert:
-            if isinstance(spider, BiliUserSpider):
+            if isinstance(spider, (BiliUserSpider, BiliUserCardsSpider)):
                 self._insert_datas(self.data_to_insert)
             elif isinstance(spider, BiliLiveUserSpider):
                 self._insert_live_datas(self.data_to_insert)
@@ -165,6 +166,6 @@ class BiliUsersSavePipeline():
             insert_sql = "INSERT IGNORE INTO bili_user_fail (uid) VALUES (%s)"
             self.cur.execute(insert_sql, uid)
             self.conn.commit()
-            logging.info(f'插入失败记录完成 uid:{uid}')
+            logging.debug(f'插入失败记录完成 uid:{uid}')
         except pymysql.Error as e:
             logging.error(f'bili_user_fail数据写入数据库异常 {e}')
