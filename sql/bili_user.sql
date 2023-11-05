@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80021
 File Encoding         : 65001
 
-Date: 2023-11-04 20:50:12
+Date: 2023-11-05 23:38:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,6 +24,7 @@ CREATE TABLE `bili_user` (
   `uid` int unsigned NOT NULL,
   `name` varchar(45) NOT NULL,
   `sex` varchar(45) NOT NULL,
+  `following` int unsigned NOT NULL DEFAULT '0' COMMENT '关注数',
   `follower` int unsigned NOT NULL DEFAULT '0' COMMENT '粉丝数',
   `face` varchar(255) NOT NULL,
   `sign` varchar(255) DEFAULT NULL,
@@ -43,6 +44,7 @@ CREATE TABLE `bili_user` (
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `uid` (`uid`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=1231506 DEFAULT CHARSET=utf8;
+  UNIQUE KEY `uid` (`uid`) USING BTREE,
+  KEY `follower` (`follower`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=7404835 DEFAULT CHARSET=utf8;
 SET FOREIGN_KEY_CHECKS=1;

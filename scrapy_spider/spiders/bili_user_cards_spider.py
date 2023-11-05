@@ -62,19 +62,23 @@ class BiliUserCardsSpider(scrapy.Spider):
         self.error_count = 0
 
     def start_requests(self) -> Iterable[Request]:
-        start_uid = 1700000  # 初始uid
-        end_uid = start_uid + 100000  # 终止uid 不包含
+        start_uid = 9000000  # 初始uid
+        end_uid = start_uid + 1000000  # 终止uid 不包含
         uids_len = 20  # 每条请求获取多少用户, 最大50
         uids_arr = []
         headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36"
+        }
+        cookies = {
+            "SESSDATA": "055a070e%2C1714662982%2Cf2b0c%2Ab2CjDjddqBgnrddI-iZVc0oMeMq0JEvZTqIlISahGH8FNpLHFW35lmwQtGXHKYWsFW-RYSVjVLY3ZoZ2xjSVVWLUZOc0N3VmJkemRLM29YX2VTSXpRTm1UQkRzVzR4a043NWR2enVDNFhXWWN6ZC00cDMtVExGZnlxQThRcVM0VExNMk9LUERrbDRnIIEC"
         }
         for uid in range(start_uid, end_uid):
             uids_arr.append(str(uid))
             if len(uids_arr) == uids_len:
                 uids = ','.join(uids_arr)
                 url = f"https://api.vc.bilibili.com/account/v1/user/cards?uids={uids}"
-                yield scrapy.Request(url=url, headers=headers, callback=self.parse, cb_kwargs={'uids_arr': uids_arr})
+                yield scrapy.Request(url=url, headers=headers, cookies=cookies, callback=self.parse,
+                                     cb_kwargs={'uids_arr': uids_arr})
 
                 uids_arr = []
 

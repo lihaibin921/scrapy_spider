@@ -8,8 +8,8 @@ import logging
 from itemadapter import ItemAdapter
 import pandas as pd
 import scrapy_spider.utils.pathutil as pathutil
+from scrapy_spider.utils.mysql_util import MysqlDatabase
 import pymysql
-from scrapy_spider.settings import DATABASE_BILI_SETTINGS
 from scrapy_spider.items import BiliUserItem, BiliLiveUserItem
 from scrapy_spider.spiders.bili_user_spider import BiliUserSpider
 from scrapy_spider.spiders.bili_live_user_spider import BiliLiveUserSpider
@@ -71,15 +71,7 @@ class GameNewWritePipeline():
 
 class BiliUsersSavePipeline():
     def __init__(self):
-        self.conn = pymysql.connect(
-            host=DATABASE_BILI_SETTINGS['db_host'],
-            port=DATABASE_BILI_SETTINGS['db_port'],
-            user=DATABASE_BILI_SETTINGS['db_user'],
-            password=DATABASE_BILI_SETTINGS['db_password'],
-            database=DATABASE_BILI_SETTINGS['db_name'],
-            charset='utf8'  # 注意必须是utf8 不是utf-8
-        )
-        self.cur = self.conn.cursor()
+        self.db = MysqlDatabase()
         self.data_to_insert = []  # 用列表缓存下, 执行批量插入
         self.count = 0
         self.fail_count = 0
@@ -134,16 +126,15 @@ class BiliUsersSavePipeline():
                 self._insert_datas(self.data_to_insert)
             elif isinstance(spider, BiliLiveUserSpider):
                 self._insert_live_datas(self.data_to_insert)
-        self.conn.close()
+        self.db.close_connection()
 
     def _insert_datas(self, datas):
         try:
             # 注意rank是关键字 需要``括起来
-            insert_sql = ("INSERT IGNORE INTO bili_user(uid , name , sex, face , sign , `rank` , level , jointime ,"
+            insert_sql = ("INSERT IGNORE INTO bili_user2(uid , name , sex, face , sign , `rank` , level , jointime ,"
                           " coins , birthday , vipType , vipStatus , VipDueDate , VipLabel , officialRole, officialTitle , officialDesc , officialType) "
                           "VALUES (%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s ,%s, %s ,%s ,%s ,%s)")
-            self.cur.executemany(insert_sql, datas)
-            self.conn.commit()
+            self.db.execute_many(insert_sql, datas)
             logging.info(f'入库成功 总条数:{self.count} , 失败数:{self.fail_count}')
         except pymysql.Error as e:
             logging.error(f'bili_user数据写入数据库异常 {e}')
@@ -155,8 +146,7 @@ class BiliUsersSavePipeline():
             insert_sql = (
                 "INSERT IGNORE INTO bili_user(uid , name , sex, face , officialDesc , officialType , follower) "
                 "VALUES (%s ,%s ,%s ,%s ,%s ,%s ,%s)")
-            self.cur.executemany(insert_sql, datas)
-            self.conn.commit()
+            self.db.execute_many(insert_sql, datas)
             logging.info(f'入库成功 总条数:{self.count} , 失败数:{self.fail_count}')
         except pymysql.Error as e:
             logging.error(f'bili_user数据写入数据库异常 {e}')
@@ -164,8 +154,7 @@ class BiliUsersSavePipeline():
     def _insert_fail_data(self, uid):
         try:
             insert_sql = "INSERT IGNORE INTO bili_user_fail (uid) VALUES (%s)"
-            self.cur.execute(insert_sql, uid)
-            self.conn.commit()
+            self.db.execute_one(insert_sql, uid)
             logging.debug(f'插入失败记录完成 uid:{uid}')
         except pymysql.Error as e:
             logging.error(f'bili_user_fail数据写入数据库异常 {e}')
