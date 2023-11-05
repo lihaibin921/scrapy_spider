@@ -34,6 +34,10 @@
 > 优点: 几乎不限流, 量大速度快 , 缺点: 几乎无缺点   
 > 综合以上3个程序可以较好完成人口普查任务
 > 
+> >**bili_user_follow_spider.py**   
+> 用户关注数, 粉丝数爬虫    
+> 比较重要的数据, 但是完全没有访问限制挺离谱的
+> 
 >> **bili_user_readme.md**  
 > 用户相关接口文档   
 > 参考文档: [哔哩哔哩-api收集](https://github.com/SocialSisterYi/bilibili-API-collect)
